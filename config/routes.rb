@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'recipe_foods/index'
+  get 'recipe_foods/show'
+  get 'recipe_foods/new'
+  get 'recipe_foods/create'
+  get 'recipe_foods/destroy'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
