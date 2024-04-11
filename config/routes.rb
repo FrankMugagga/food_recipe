@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'inventories/index,'
+  get 'inventories/show,'
+  get 'inventories/new,'
+  get 'inventories/create,'
+  get 'inventories/destroy'
   get 'recipes/index'
   get 'recipes/show'
   get 'recipes/new'
