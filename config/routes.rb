@@ -1,19 +1,27 @@
 Rails.application.routes.draw do
-  get 'inventories/index,'
-  get 'inventories/show,'
-  get 'inventories/new,'
-  get 'inventories/create,'
-  get 'inventories/destroy'
-  get 'recipes/index'
-  get 'recipes/show'
-  get 'recipes/new'
-  get 'recipes/create'
-  get 'recipes/destroy'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   devise_scope :user do
     root to: 'devise/sessions#new'
+  end
+
+  resources :users do
+    resources :inventories
+    resources :recipes
+  end
+
+  resources :recipes do
+    resources :recipe_foods
+  end
+
+  resources :inventories do
+    resources :inventory_foods
+  end
+
+  resources :foods do
+    resources :inventory_foods
+    resources :recipe_foods
   end
 end
