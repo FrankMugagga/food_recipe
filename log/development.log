@@ -1,2 +1,13 @@
   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mFood Load (6.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+Started GET "/" for 127.0.0.1 at 2024-04-12 22:14:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | Allocations: 841)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4219)
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 35931)
+Completed 200 OK in 120ms (Views: 89.0ms | ActiveRecord: 5.6ms | Allocations: 49204)
+
+

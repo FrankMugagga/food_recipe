@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe= Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @user = User.find(params[:id])
-    @recipe= Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfull created'
     else
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe= recipe.find(params[:id])
+    @recipe = recipe.find(params[:id])
     @inventory.destroy
     redirect_to recipes_url, notice: 'Inventory was successfully destroyed'
   end

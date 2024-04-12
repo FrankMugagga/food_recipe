@@ -1,35 +1,35 @@
 class RecipeFoodsController < ApplicationController
   def index
     @recipe_foods = RecipeFood.all
-end
+  end
 
-def show
+  def show
     @recipe_food = RecipeFood.find(params[:id])
-end
+  end
 
-def new
+  def new
     @recipe_food = RecipeFood.new
-end
+  end
 
-def create
+  def create
     @recipe_food = RecipeFood.new(recipe_food_params)
 
     if @recipe_food.save
-        redirect_to @recipe_food, notice: 'Recipefood was successfully created'
+      redirect_to @recipe_food, notice: 'Recipefood was successfully created'
     else
-        render :new
+      render :new
     end
-end
+  end
 
-def destroy
-    @recipe_food = RecipeFood.find(params[:id])        
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
     redirect_to recipe_foods_url, notice: 'Inventory food was successfully destroyed'
-end
+  end
 
-private
+  private
 
-def recipe_food_params
+  def recipe_food_params
     params.require(:inventory_food).permit(:quantity, :inventory_id, :food_id)
-end
+  end
 end
