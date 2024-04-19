@@ -24,4 +24,6 @@ Rails.application.routes.draw do
     resources :inventory_foods
     resources :recipe_foods
   end
+
+  resources :users, only: [:index]
 end

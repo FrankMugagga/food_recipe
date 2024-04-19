@@ -1,4 +1,4 @@
-add food
+
 <%= link_to 'Add food', new_food_path %>
 
 <% @foods.each do |food| %>
@@ -6,3 +6,5 @@ add food
       <li>  <%= render partial: 'partials/food', locals: { food:food } %> </li>
     </ul>
 <% end %>
+
+<%= link_to 'back', users_path %>

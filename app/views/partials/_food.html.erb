@@ -1,5 +1,7 @@
 <%= food.name %>
 <%= food.measurement_unit %>
 <%= food.price %>
+By <%= food.user.name %>
 <%= link_to 'Show', food %>
+<%= link_to 'Edit', edit_food_path(food) %>
 <%= link_to 'Delete', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>

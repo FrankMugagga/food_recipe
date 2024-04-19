@@ -1,6 +1,6 @@
 <section>
   <h1>Add food</h1>
-  <%= form_with(model: @food, url: foods_path, method: :post) do |form| %>
+  <%= form_with(model: @food, url: foods_path(current_user), method: :post) do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <br>
@@ -12,4 +12,5 @@
 
     <%= form.submit 'Add food' %>
   <% end %>
+  <%= link_to 'back', foods_path %>
 </section>
