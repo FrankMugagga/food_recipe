@@ -1,0 +1,15 @@
+<section>
+  <h1>Add food</h1>
+  <%= form_with(model: @food, url: foods_path, method: :post) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :measurement_unit %>
+    <%= form.text_field :measurement_unit %>
+    <br>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+
+    <%= form.submit 'Add food' %>
+  <% end %>
+</section>
