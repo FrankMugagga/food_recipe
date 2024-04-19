@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
@@ -52,4 +52,3 @@ class RecipesController < ApplicationController
     params.required(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end
-
