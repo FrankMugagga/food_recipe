@@ -1,5 +1,5 @@
 <section>
-  <h1>Add food</h1>
+  <h1>Edit food</h1>
   <%= form_with(model: @food, url: food_path(@food), method: :put) do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name, placeholder: @food.name %>

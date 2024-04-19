@@ -1,2 +1,17 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1>Recipes</h1>
+
+<% if @recipe.public %>
+  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %> 
+<% else %>
+  <%= button_to 'Private', toggle_public_recipe_path(@recipe), method: :patch %>
+<% end %>
+<%= @recipe.public %>
+
+<%= @recipe.name %>
+<%= @recipe.preparation_time %>
+<%= @recipe.cooking_time %>
+<%= @recipe.description %>
+
+By <%= @recipe.user.name %>
+
+<%= link_to 'Back', recipes_url %>
