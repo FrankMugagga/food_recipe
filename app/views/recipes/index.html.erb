@@ -2,7 +2,7 @@
 
 <% @recipes.each do |recipe| %>
     <ul>
-      <li> <%= render partial: 'partials/recipes', locals: {recipe:recipe} %> </li>
+      <li> <%= render partial: 'partials/recipe', locals: {recipe:recipe} %> </li>
     </ul>
 <% end %>
 

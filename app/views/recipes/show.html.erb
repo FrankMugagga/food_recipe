@@ -1,13 +1,12 @@
-<h1>Recipes</h1>
+<h1><%= @recipe.name %></h1>
 
 <% if @recipe.public %>
   <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %> 
 <% else %>
-  <%= button_to 'Private', toggle_public_recipe_path(@recipe), method: :patch %>
+  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %>
 <% end %>
 <%= @recipe.public %>
 
-<%= @recipe.name %>
 <%= @recipe.preparation_time %>
 <%= @recipe.cooking_time %>
 <%= @recipe.description %>
