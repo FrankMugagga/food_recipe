@@ -1,0 +1,5 @@
+
+<%= inventory.food.name %>
+<%= inventory.quantity %>
+
+<%= link_to 'Delete', inventory_inventory_food_path(@inventory, inventory), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
