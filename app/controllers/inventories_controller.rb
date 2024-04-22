@@ -5,18 +5,17 @@ class InventoriesController < ApplicationController
 
   def show
     @inventory = Inventory.find(params[:id])
+    @inventory_foods = InventoryFood.all
   end
 
   def new
-    @user = User.find(params[:id])
-    @inventory = Inventory.new(inventory_params)
+    @inventory = current_user.inventories.new
   end
 
   def create
-    @user = User.find(params[:id])
-    @inventory = Inventory.new(inventory_params)
+    @inventory = current_user.inventories.new(inventory_params)
     if @inventory.save
-      redirect_to @inventory, notice: 'Inventory was successfull created'
+      redirect_to inventories_path, notice: 'Inventory was successfull created'
     else
       render :new
     end
