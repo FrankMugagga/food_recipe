@@ -3,11 +3,11 @@ class InventoryFoodsController < ApplicationController
   before_action :set_inventory_food, only: [:destroy]
 
   def index
-    @inventory_foods = InventoryFood.all   
+    @inventory_foods = InventoryFood.all
   end
 
   def show
-    @inventory_food = InventoryFood.find(params[:id])    
+    @inventory_food = InventoryFood.find(params[:id])
   end
 
   def new
@@ -27,14 +27,14 @@ class InventoryFoodsController < ApplicationController
     @inventory_food.destroy
     redirect_to inventory_path(@inventory), notice: 'Inventory was successfully deleted'
   end
-  
+
   private
 
   def set_inventory
     @inventory = current_user.inventories.find_by(id: params[:inventory_id])
-    unless @inventory
-      redirect_to inventories_path, alert: 'Inventory not found'
-    end
+    return if @inventory
+
+    redirect_to inventories_path, alert: 'Inventory not found'
   end
 
   def set_inventory_food
@@ -44,5 +44,4 @@ class InventoryFoodsController < ApplicationController
   def inventory_food_params
     params.require(:inventory_food).permit(:food_id, :quantity)
   end
-
 end

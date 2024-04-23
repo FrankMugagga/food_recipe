@@ -1,8 +1,6 @@
 class RecipeFoodsController < ApplicationController
-
-  before_action :set_recipe, only: [:new, :create, :destroy]
+  before_action :set_recipe, only: %i[new create destroy]
   before_action :set_recipe_food, only: [:destroy]
-
 
   def index
     @recipe_foods = RecipeFood.all
@@ -36,9 +34,9 @@ class RecipeFoodsController < ApplicationController
   def set_recipe
     @recipe = current_user.recipes.find_by(id: params[:recipe_id])
 
-    unless @recipe
-      redirect_to recipes_path, alert: 'Recipe not found'
-    end
+    return if @recipe
+
+    redirect_to recipes_path, alert: 'Recipe not found'
   end
 
   def set_recipe_food
