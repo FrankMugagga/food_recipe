@@ -1,2 +1,13 @@
-<h1>RecipeFoods#new</h1>
-<p>Find me in app/views/recipe_foods/new.html.erb</p>
+<h1>Add ingredient</h1>
+
+<%= form_with(model: @recipe_food, url: recipe_recipe_foods_path(@recipe), local: true) do |form| %>
+    <%= form.hidden_field :recipe_id, value: @recipe.id %>
+
+    <%= form.label :food_id, 'Select Food' %>
+    <%= form.collection_select :food_id, Food.all, :id, :name, include_blank: true %>
+
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+
+    <%= form.submit 'Add ingredient' %>
+<% end %>
