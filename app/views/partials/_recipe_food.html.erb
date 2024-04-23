@@ -1,0 +1,5 @@
+<%= recipe.food.name %>
+  <%= recipe.quantity %>
+  <%= recipe.food.price %>
+
+  <%= link_to 'Delete', recipe_recipe_food_path(@recipe, recipe), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
