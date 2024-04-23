@@ -17,7 +17,7 @@ class InventoryFoodsController < ApplicationController
   def create
     @inventory_food = @inventory.inventory_foods.build(inventory_food_params)
     if @inventory_food.save
-      redirect_to inventory_path(@inventory), notice: 'Food was successfully create'
+      redirect_to inventory_path(@inventory), notice: 'Food was successfully added'
     else
       render :new
     end
