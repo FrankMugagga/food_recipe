@@ -1,4 +1,9 @@
 class RecipeFoodsController < ApplicationController
+
+  before_action :set_recipe, only: [:new, :create, :destroy]
+  before_action :set_recipe_food, only: [:destroy]
+
+
   def index
     @recipe_foods = RecipeFood.all
   end
@@ -8,28 +13,39 @@ class RecipeFoodsController < ApplicationController
   end
 
   def new
-    @recipe_food = RecipeFood.new
+    @recipe_food = @recipe.recipe_foods.new
   end
 
   def create
-    @recipe_food = RecipeFood.new(recipe_food_params)
+    @recipe_food = @recipe.recipe_foods.build(recipe_food_params)
 
     if @recipe_food.save
-      redirect_to @recipe_food, notice: 'Recipefood was successfully created'
+      redirect_to recipe_path(@recipe), notice: 'Ingredient was successfully added'
     else
       render :new
     end
   end
 
   def destroy
-    @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
-    redirect_to recipe_foods_url, notice: 'Inventory food was successfully destroyed'
+    redirect_to recipe_path(@recipe), notice: 'Ingredient was successfully deleted'
   end
 
   private
 
+  def set_recipe
+    @recipe = current_user.recipes.find_by(id: params[:recipe_id])
+
+    unless @recipe
+      redirect_to recipes_path, alert: 'Recipe not found'
+    end
+  end
+
+  def set_recipe_food
+    @recipe_food = @recipe.recipe_foods.find(params[:id])
+  end
+
   def recipe_food_params
-    params.require(:inventory_food).permit(:quantity, :inventory_id, :food_id)
+    params.require(:recipe_food).permit(:food_id, :quantity)
   end
 end
