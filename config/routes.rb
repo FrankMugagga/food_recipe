@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'public_recipes/index'
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       patch 'toggle_public'
     end
     resources :recipe_foods
+
+    get 'shopping_list/:recipe_id/:inventory_id', to: 'shopping_lists#show', as: :shopping_list
   end
 
   resources :inventories do
@@ -31,4 +33,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :public_recipes, only: [:index]
+
 end
