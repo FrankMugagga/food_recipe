@@ -18,8 +18,7 @@ Rails.application.routes.draw do
       patch 'toggle_public'
     end
     resources :recipe_foods
-
-    get 'shopping_list/:recipe_id/:inventory_id', to: 'shopping_lists#show', as: :shopping_list
+    resources :shopping_lists
   end
 
   resources :inventories do
@@ -33,5 +32,4 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :public_recipes, only: [:index]
-
 end
