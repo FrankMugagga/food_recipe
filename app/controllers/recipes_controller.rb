@@ -47,9 +47,19 @@ class RecipesController < ApplicationController
     redirect_back(fallback_location: recipe_path)
   end
 
+  def shopping_list
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user == current_user
+      @inventories = @recipe.user.inventories
+    end
+       
+  end
+
   private
 
   def recipe_params
     params.required(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
+  
+
 end
