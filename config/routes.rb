@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     member do
       patch 'toggle_public'
     end
+    member do
+      get 'shopping_list'
+    end
     resources :recipe_foods
     resources :shopping_lists
   end
