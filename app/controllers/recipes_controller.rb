@@ -49,10 +49,9 @@ class RecipesController < ApplicationController
 
   def shopping_list
     @recipe = Recipe.find(params[:id])
-    if @recipe.user == current_user
-      @inventories = @recipe.user.inventories
-    end
-       
+    return unless @recipe.user == current_user
+
+    @inventories = @recipe.user.inventories
   end
 
   private
@@ -60,6 +59,4 @@ class RecipesController < ApplicationController
   def recipe_params
     params.required(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
-  
-
 end
