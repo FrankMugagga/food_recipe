@@ -4,6 +4,12 @@ class ShoppingListsController < ApplicationController
     @shopping_list = ShoppingList.all
   end
 
+  def show
+    @shopping_list = ShoppingList.find(params[:id])
+    @shopping_list.total_price
+    @shopping_list.total_missing_items
+  end
+
   def new
     @shopping_list = @recipe.shopping_lists.new
   end

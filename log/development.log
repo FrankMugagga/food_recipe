@@ -15288,3 +15288,880 @@ Processing by InventoriesController#show as HTML
 Completed 200 OK in 60ms (Views: 18.8ms | ActiveRecord: 5.9ms | Allocations: 13235)
 
 
+Started GET "/inventories" for 127.0.0.1 at 2024-04-28 14:27:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.9ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 2.1ms | Allocations: 378)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4072)
+  Rendered layout layouts/application.html.erb (Duration: 115.2ms | Allocations: 35518)
+Completed 200 OK in 177ms (Views: 115.1ms | ActiveRecord: 14.0ms | Allocations: 53789)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-04-28 14:27:27 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered partials/_menu.html.erb (Duration: 2.8ms | Allocations: 287)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered partials/_user.html.erb (Duration: 1.8ms | Allocations: 130)
+  Rendered users/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 1817)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 3205)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 1.8ms | Allocations: 5229)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-04-28 14:27:32 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe.html.erb:3
+  Rendered partials/_recipe.html.erb (Duration: 30.7ms | Allocations: 3694)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe.html.erb:3
+  Rendered partials/_recipe.html.erb (Duration: 3.9ms | Allocations: 790)
+  Rendered recipes/index.html.erb within layouts/application (Duration: 88.4ms | Allocations: 9733)
+  Rendered layout layouts/application.html.erb (Duration: 93.7ms | Allocations: 11136)
+Completed 200 OK in 133ms (Views: 87.5ms | ActiveRecord: 12.2ms | Allocations: 14864)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2024-04-28 14:27:35 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mRecipeFood Load (1.3ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipes/show.html.erb:20
+  [1m[36mFood Load (1.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe_food.html.erb:1
+  Rendered partials/_recipe_food.html.erb (Duration: 35.7ms | Allocations: 7524)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 87.9ms | Allocations: 12758)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 14081)
+Completed 200 OK in 105ms (Views: 76.1ms | ActiveRecord: 16.7ms | Allocations: 17866)
+
+
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 14:27:42 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:24:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1979)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3358)
+Completed 200 OK in 54ms (Views: 15.8ms | ActiveRecord: 6.2ms | Allocations: 12701)
+
+
+Started GET "/recipes/3/shopping_lists/index" for 127.0.0.1 at 2024-04-28 14:27:54 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"index"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1407)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 2995)
+
+
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:28:29 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1320)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.8ms | Allocations: 2896)
+
+
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 14:28:59 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:24:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1138)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 2445)
+Completed 200 OK in 31ms (Views: 15.2ms | ActiveRecord: 2.4ms | Allocations: 5021)
+
+
+Started POST "/recipes/3/shopping_lists" for 127.0.0.1 at 2024-04-28 14:29:06 +0300
+Processing by ShoppingListsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "recipe_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:24:in `set_recipe'
+[31mUnpermitted parameter: :recipe_id. Context: { controller: ShoppingListsController, action: create, request: #<ActionDispatch::Request:0x000070aea22c1188>, params: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "controller"=>"shopping_lists", "action"=>"create", "recipe_id"=>"3"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shopping_lists_controller.rb:13:in `create'
+  [1m[36mInventory Load (0.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:13:in `create'
+  [1m[36mShoppingList Create (2.5ms)[0m  [1m[32mINSERT INTO "shopping_lists" ("recipe_id", "inventory_id", "name", "quantity", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["recipe_id", 3], ["inventory_id", 2], ["name", nil], ["quantity", nil], ["price", nil], ["created_at", "2024-04-28 11:29:06.415390"], ["updated_at", "2024-04-28 11:29:06.415390"]]
+  ↳ app/controllers/shopping_lists_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shopping_lists_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/recipes/3/shopping_lists/11
+Completed 302 Found in 33ms (ActiveRecord: 10.4ms | Allocations: 8425)
+
+
+Started GET "/recipes/3/shopping_lists/11" for 127.0.0.1 at 2024-04-28 14:29:06 +0300
+Processing by ShoppingListsController#show as TURBO_STREAM
+  Parameters: {"recipe_id"=>"3", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1324)
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 2970)
+
+
+Started GET "/recipes/3/shopping_lists/11" for 127.0.0.1 at 2024-04-28 14:29:49 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1724)
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 3708)
+
+
+Started GET "/recipes/3/shopping_lists/index" for 127.0.0.1 at 2024-04-28 14:30:08 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"index"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 1321)
+Completed 200 OK in 35ms (Views: 16.4ms | ActiveRecord: 0.6ms | Allocations: 2907)
+
+
+Started GET "/recipes/3/shopping_list" for 127.0.0.1 at 2024-04-28 14:30:44 +0300
+Processing by RecipesController#shopping_list as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:51:in `shopping_list'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:52:in `shopping_list'
+Completed 406 Not Acceptable in 16ms (ActiveRecord: 2.2ms | Allocations: 3798)
+
+
+  
+ActionController::MissingExactTemplate (RecipesController#shopping_list is missing a template for request formats: text/html):
+  
+actionpack (7.0.8) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.8) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:31:02 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1336)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 2927)
+
+
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:33:56 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1195)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 3167)
+
+
+  
+ActionView::Template::Error (undefined method `recipe' for nil:NilClass):
+    2: 
+    3: <p>Amount of food to buy: </p>
+    4: <p>Total value of food needed: </p>
+    5: Recipe: <%= @shopping_list.recipe.name %>
+    6: Inventory: <%= @shopping_list.inventory.name %>
+  
+app/views/shopping_lists/show.html.erb:5
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:34:51 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1176)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms | Allocations: 3138)
+
+
+  
+ActionView::Template::Error (undefined method `recipe_id' for nil:NilClass):
+    2: 
+    3: <p>Amount of food to buy: </p>
+    4: <p>Total value of food needed: </p>
+    5: Recipe: <%= @shopping_list.recipe_id %>
+    6: Inventory: <%= @shopping_list.inventory_id %>
+  
+app/views/shopping_lists/show.html.erb:5
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:37:00 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1013)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.9ms | Allocations: 7346)
+
+
+  
+ActionView::Template::Error (undefined method `recipe_id' for nil:NilClass):
+    2: 
+    3: <p>Amount of food to buy: </p>
+    4: <p>Total value of food needed: </p>
+    5: Recipe: <%= @shopping_list.recipe_id %>
+    6: Inventory: <%= @shopping_list.inventory_id %>
+  
+app/views/shopping_lists/show.html.erb:5
+Started GET "/recipes/3/shopping_lists/show" for 127.0.0.1 at 2024-04-28 14:38:07 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"show"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.1ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+Completed 404 Not Found in 17ms (ActiveRecord: 5.3ms | Allocations: 8826)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ShoppingList with 'id'=show):
+  
+app/controllers/shopping_lists_controller.rb:8:in `show'
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 14:38:25 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:28:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4574)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 19063)
+Completed 200 OK in 34ms (Views: 10.5ms | ActiveRecord: 5.6ms | Allocations: 29620)
+
+
+Started POST "/recipes/3/shopping_lists" for 127.0.0.1 at 2024-04-28 14:38:29 +0300
+Processing by ShoppingListsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "recipe_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:28:in `set_recipe'
+[31mUnpermitted parameter: :recipe_id. Context: { controller: ShoppingListsController, action: create, request: #<ActionDispatch::Request:0x000070aea20655b0>, params: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "controller"=>"shopping_lists", "action"=>"create", "recipe_id"=>"3"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mShoppingList Create (0.6ms)[0m  [1m[32mINSERT INTO "shopping_lists" ("recipe_id", "inventory_id", "name", "quantity", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["recipe_id", 3], ["inventory_id", 2], ["name", nil], ["quantity", nil], ["price", nil], ["created_at", "2024-04-28 11:38:29.904794"], ["updated_at", "2024-04-28 11:38:29.904794"]]
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/recipes/3/shopping_lists/12
+Completed 302 Found in 43ms (ActiveRecord: 30.3ms | Allocations: 7053)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:38:29 +0300
+Processing by ShoppingListsController#show as TURBO_STREAM
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1323)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 3508)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:39:20 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 821)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2434)
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 1.3ms | Allocations: 5120)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:39:30 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:5
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2319)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3932)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 1.2ms | Allocations: 6601)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:39:42 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:5
+  [1m[36mInventory Load (1.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1509)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3137)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 2.2ms | Allocations: 5824)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:43:54 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1270)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 3938)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Shopping list </h1>
+
+<p>Amount of food to buy: </p>
+<p>Total value of food needed: </p>
+Recipe: <%= @shopping_list.recipe.name %> <br />
+Inventory: <%= @shopping_list.inventory.name %>
+
+<ul>
+  <% @shopping_list.calculate_missing_items.each do |item %>|
+    <li> item[:food] </li>: Missing <%= item[:missing] %>
+<% end %>
+</ul>
+):
+1:    <h1>Shopping list </h1>
+2:    
+3:    <p>Amount of food to buy: </p>
+4:    <p>Total value of food needed: </p>
+5:    Recipe: <%= @shopping_list.recipe.name %> <br />
+6:    Inventory: <%= @shopping_list.inventory.name %>
+7:    
+8:    <ul>
+9:      <% @shopping_list.calculate_missing_items.each do |item %>|
+10:        <li> item[:food] </li>: Missing <%= item[:missing] %>
+11:    <% end %>
+12:    </ul>
+  
+app/views/shopping_lists/show.html.erb:9: formal argument cannot be an instance variable
+app/views/shopping_lists/show.html.erb:9: syntax error, unexpected '.', expecting '|'
+app/views/shopping_lists/show.html.erb:14: syntax error, unexpected `end'
+app/views/shopping_lists/show.html.erb:9: formal argument cannot be an instance variable
+app/views/shopping_lists/show.html.erb:9: syntax error, unexpected '.', expecting '|'
+app/views/shopping_lists/show.html.erb:14: syntax error, unexpected `end'
+app/views/shopping_lists/show.html.erb:9: formal argument cannot be an instance variable
+app/views/shopping_lists/show.html.erb:9: syntax error, unexpected '.', expecting '|'
+app/views/shopping_lists/show.html.erb:14: syntax error, unexpected `end'
+app/views/shopping_lists/show.html.erb:9: formal argument cannot be an instance variable
+app/views/shopping_lists/show.html.erb:9: syntax error, unexpected '.', expecting '|'
+app/views/shopping_lists/show.html.erb:14: syntax error, unexpected `end'
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:45:04 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.8ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:5
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mRecipeFood Load (0.1ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mInventoryFood Load (0.4ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 28.3ms | Allocations: 22611)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 24239)
+Completed 200 OK in 39ms (Views: 26.7ms | ActiveRecord: 5.7ms | Allocations: 26923)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:45:36 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.1ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:5
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mRecipeFood Load (0.1ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mInventoryFood Load (0.1ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4099)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5712)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 1.1ms | Allocations: 8403)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:50:02 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mRecipeFood Load (0.1ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mInventoryFood Load (0.2ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mCACHE RecipeFood Load (0.0ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mCACHE InventoryFood Load (0.0ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5438)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7051)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 1.3ms | Allocations: 9708)
+
+
+Started GET "/recipes/3/shopping_lists/12" for 127.0.0.1 at 2024-04-28 14:52:51 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mRecipeFood Load (0.1ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mInventoryFood Load (0.3ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mCACHE RecipeFood Load (0.0ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mCACHE InventoryFood Load (0.0ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 5461)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 7089)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 1.4ms | Allocations: 9788)
+
+
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 14:54:37 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:28:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1410)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2721)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 1.4ms | Allocations: 5336)
+
+
+Started POST "/recipes/3/shopping_lists" for 127.0.0.1 at 2024-04-28 14:54:44 +0300
+Processing by ShoppingListsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "recipe_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:28:in `set_recipe'
+[31mUnpermitted parameter: :recipe_id. Context: { controller: ShoppingListsController, action: create, request: #<ActionDispatch::Request:0x000070aea1e2c140>, params: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "controller"=>"shopping_lists", "action"=>"create", "recipe_id"=>"3"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mShoppingList Create (0.6ms)[0m  [1m[32mINSERT INTO "shopping_lists" ("recipe_id", "inventory_id", "name", "quantity", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["recipe_id", 3], ["inventory_id", 2], ["name", nil], ["quantity", nil], ["price", nil], ["created_at", "2024-04-28 11:54:44.507951"], ["updated_at", "2024-04-28 11:54:44.507951"]]
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shopping_lists_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/recipes/3/shopping_lists/13
+Completed 302 Found in 14ms (ActiveRecord: 7.4ms | Allocations: 5463)
+
+
+Started GET "/recipes/3/shopping_lists/13" for 127.0.0.1 at 2024-04-28 14:54:44 +0300
+Processing by ShoppingListsController#show as TURBO_STREAM
+  Parameters: {"recipe_id"=>"3", "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:7:in `calculate_missing_items'
+  [1m[36mRecipeFood Load (0.4ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mInventoryFood Load (0.2ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  [1m[36mCACHE RecipeFood Load (0.0ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" = $1 AND "recipe_foods"."food_id" = $2 LIMIT $3[0m  [["recipe_id", 3], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:8:in `block in calculate_missing_items'
+  [1m[36mCACHE InventoryFood Load (0.0ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."inventory_id" = $1 AND "inventory_foods"."food_id" = $2 LIMIT $3[0m  [["inventory_id", 2], ["food_id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `block in calculate_missing_items'
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5199)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 6508)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 1.4ms | Allocations: 8683)
+
+
+Started GET "/recipes/3/shopping_lists/13" for 127.0.0.1 at 2024-04-28 20:40:50 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.2ms | Allocations: 9257)
+
+
+  
+SyntaxError (/home/mourene/practice/food_recipe/app/models/shopping_list.rb:13: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...ry_amount = inventory$.quantity || 0
+...                       ^~~~~~~~
+/home/mourene/practice/food_recipe/app/models/shopping_list.rb:36: syntax error, unexpected `end'):
+  
+app/models/shopping_list.rb:13: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/models/shopping_list.rb:36: syntax error, unexpected `end'
+app/models/shopping_list.rb:13: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/models/shopping_list.rb:36: syntax error, unexpected `end'
+app/controllers/shopping_lists_controller.rb:8:in `show'
+Started GET "/recipes/3/shopping_lists/13" for 127.0.0.1 at 2024-04-28 20:41:11 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mRecipeFood Load (0.2ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mInventoryFood Load (0.1ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:13:in `block in missing_items'
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 14.0ms | Allocations: 35407)
+
+
+  
+NoMethodError (undefined method `quantity' for #<Inventory id: 2, name: "Inventory One", user_id: 1, created_at: "2024-04-21 20:10:04.459984000 +0000", updated_at: "2024-04-21 20:10:04.459984000 +0000">):
+  
+app/models/shopping_list.rb:13:in `block in missing_items'
+app/models/shopping_list.rb:9:in `missing_items'
+app/models/shopping_list.rb:29:in `total_price'
+app/controllers/shopping_lists_controller.rb:9:in `show'
+Started GET "/recipes/3/shopping_lists/13" for 127.0.0.1 at 2024-04-28 20:41:51 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mRecipeFood Load (0.2ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mInventoryFood Load (0.1ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 5352)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 19892)
+Completed 200 OK in 58ms (Views: 18.9ms | ActiveRecord: 11.1ms | Allocations: 49652)
+
+
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 20:42:19 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:30:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1481)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2794)
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 1.1ms | Allocations: 6941)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2024-04-28 20:42:20 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mRecipeFood Load (0.3ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipes/show.html.erb:20
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe_food.html.erb:1
+  Rendered partials/_recipe_food.html.erb (Duration: 3.0ms | Allocations: 1756)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 4745)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6125)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 1.8ms | Allocations: 9273)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-04-28 20:42:24 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe.html.erb:3
+  Rendered partials/_recipe.html.erb (Duration: 1.9ms | Allocations: 1076)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe.html.erb:3
+  Rendered partials/_recipe.html.erb (Duration: 0.8ms | Allocations: 779)
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2949)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4264)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 1.0ms | Allocations: 5937)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2024-04-28 20:42:29 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mRecipeFood Load (0.6ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipes/show.html.erb:20
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_recipe_food.html.erb:1
+  Rendered partials/_recipe_food.html.erb (Duration: 2.0ms | Allocations: 803)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2486)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3793)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 2.4ms | Allocations: 5899)
+
+
+Started GET "/recipes/3/shopping_lists/new" for 127.0.0.1 at 2024-04-28 20:44:12 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:30:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/new.html.erb within layouts/application
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/shopping_lists/new.html.erb:6
+  Rendered shopping_lists/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1138)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2448)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.9ms | Allocations: 5018)
+
+
+Started POST "/recipes/3/shopping_lists" for 127.0.0.1 at 2024-04-28 20:44:16 +0300
+Processing by ShoppingListsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "recipe_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:30:in `set_recipe'
+[31mUnpermitted parameter: :recipe_id. Context: { controller: ShoppingListsController, action: create, request: #<ActionDispatch::Request:0x000070aea3f45520>, params: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"3", "inventory_id"=>"2"}, "commit"=>"Generate", "controller"=>"shopping_lists", "action"=>"create", "recipe_id"=>"3"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shopping_lists_controller.rb:19:in `create'
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:19:in `create'
+  [1m[36mShoppingList Create (0.5ms)[0m  [1m[32mINSERT INTO "shopping_lists" ("recipe_id", "inventory_id", "name", "quantity", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["recipe_id", 3], ["inventory_id", 2], ["name", nil], ["quantity", nil], ["price", nil], ["created_at", "2024-04-28 17:44:16.635936"], ["updated_at", "2024-04-28 17:44:16.635936"]]
+  ↳ app/controllers/shopping_lists_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shopping_lists_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/recipes/3/shopping_lists/14
+Completed 302 Found in 18ms (ActiveRecord: 7.6ms | Allocations: 5659)
+
+
+Started GET "/recipes/3/shopping_lists/14" for 127.0.0.1 at 2024-04-28 20:44:16 +0300
+Processing by ShoppingListsController#show as TURBO_STREAM
+  Parameters: {"recipe_id"=>"3", "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mRecipeFood Load (0.2ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mInventoryFood Load (0.2ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2013)
+Completed 200 OK in 26ms (Views: 13.5ms | ActiveRecord: 1.6ms | Allocations: 7464)
+
+
+Started GET "/recipes/3/shopping_lists/14" for 127.0.0.1 at 2024-04-28 20:48:04 +0300
+Processing by ShoppingListsController#show as HTML
+  Parameters: {"recipe_id"=>"3", "id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/shopping_lists_controller.rb:8:in `show'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" INNER JOIN "recipe_foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipe_foods"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mRecipeFood Load (0.2ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  [1m[36mInventoryFood Load (0.3ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."food_id" = $1[0m  [["food_id", 3]]
+  ↳ app/models/shopping_list.rb:9:in `missing_items'
+  Rendering layout layouts/application.html.erb
+  Rendering shopping_lists/show.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shopping_lists/show.html.erb:6
+  Rendered shopping_lists/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 5080)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 19359)
+Completed 200 OK in 57ms (Views: 10.1ms | ActiveRecord: 15.5ms | Allocations: 48767)
+
+
