@@ -15,7 +15,7 @@ By <%= @recipe.user.name %>
 
 <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %>
 
-<%= link_to 'Add inventory', new_recipe_shopping_list_path(@recipe) %>
+<%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe) %>
 
 <% @recipe_foods.each do |recipe| %>
   <ul>
