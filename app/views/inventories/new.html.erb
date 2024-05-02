@@ -1,0 +1,9 @@
+<h1>Create Inventory</h1>
+
+<%= form_with(model: @inventory, url: inventories_path(current_user), method: :post) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.submit 'Create inventory' %>
+<% end %>
+
+<%= link_to 'Back', inventories_path %>

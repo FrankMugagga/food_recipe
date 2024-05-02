@@ -1,0 +1,10 @@
+<h1>Recipes</h1>
+<%= link_to 'Add recipe', new_recipe_path %>
+
+<% @recipes.each do |recipe| %>
+    <ul>
+      <li> <%= render partial: 'partials/recipe', locals: {recipe:recipe} %> </li>
+    </ul>
+<% end %>
+
+<%= link_to 'Back', users_url %>

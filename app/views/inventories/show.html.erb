@@ -1,0 +1,12 @@
+<h1>Inventory</h1>
+<%= @inventory.id %> <%= @inventory.name %>
+
+<%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory) %>
+
+<% @inventory_foods.each do |inventory| %>
+    <ul>
+      <li> <%= render partial: 'partials/inventory_food', locals: { inventory:inventory } %> </li>
+    </ul>
+<% end %>
+
+<%= link_to 'Back', inventories_path %>

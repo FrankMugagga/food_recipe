@@ -1,0 +1,9 @@
+<h1>Generate ShoppingList for <%= @shopping_list.inventory_id %></h1>
+
+<%= form_with(model: @shopping_list, url: recipe_shopping_lists_path(@recipe), local: true) do  |form| %>
+    <%= form.hidden_field :recipe_id, value: @recipe.id %>
+    <%= form.label :inventory_id, 'Choose an Inventory to use' %>
+    <%= form.collection_select :inventory_id, Inventory.all, :id, :name, include_blank: true %>
+    <%= form.submit  'Generate' %>
+<% end %>
+

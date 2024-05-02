@@ -1,0 +1,5 @@
+<%= inventory.name %>
+
+<%= link_to 'Show', inventory %>
+<%= link_to 'Edit', edit_inventory_path(inventory) %>
+<%= link_to 'Delete', inventory, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>

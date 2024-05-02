@@ -1,0 +1,27 @@
+<h1><%= @recipe.name %></h1>
+
+<% if @recipe.public %>
+  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %> 
+<% else %>
+  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %>
+<% end %>
+<%= @recipe.public %>
+
+<%= @recipe.preparation_time %>
+<%= @recipe.cooking_time %>
+<%= @recipe.description %>
+
+By <%= @recipe.user.name %>
+
+<%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %>
+
+<%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe) %>
+
+<% @recipe_foods.each do |recipe| %>
+  <ul>
+    <li> <%= render partial: 'partials/recipe_food', locals: { recipe:recipe } %> </li>
+  </ul>
+<% end %>
+
+<%= link_to 'Back', recipes_url %>
+
