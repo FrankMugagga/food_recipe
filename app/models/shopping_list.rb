@@ -4,7 +4,7 @@ class ShoppingList < ApplicationRecord
 
   def missing_items
     return @missing_items if defined?(@missing_items)
-    
+
     @missing_items = recipe.foods.includes(:recipe_foods, :inventory_foods).map do |food|
       item_details(food)
     end.compact
