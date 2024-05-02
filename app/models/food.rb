@@ -5,5 +5,5 @@ class Food < ApplicationRecord
   has_many :inventory_foods
   has_many :inventories, through: :inventory_foods
 
-  validate :name, :measurement_unit, :price, presence: { 'Plaese enter value, Cannot be blank' }
+  validate :name, :measurement_unit, :price, presence: { message: 'Plaese enter value, Cannot be blank' }
 end
