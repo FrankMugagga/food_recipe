@@ -18083,3 +18083,479 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 1.1ms | Allocations: 5912)
 
 
+Started POST "/recipes/1/shopping_lists" for ::1 at 2024-05-02 23:06:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShoppingListsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shopping_list"=>{"recipe_id"=>"1", "inventory_id"=>"1"}, "commit"=>"Generate", "recipe_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms | Allocations: 19129)
+
+
+  
+NameError (Rails couldn't find a valid model for Recipe association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/shopping_lists_controller.rb:30:in `set_recipe'
+Started GET "/recipes/1/shopping_lists/new" for ::1 at 2024-05-02 23:09:04 +0300
+Processing by ShoppingListsController#new as HTML
+  Parameters: {"recipe_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.7ms | Allocations: 10431)
+
+
+  
+NameError (Rails couldn't find a valid model for Recipe association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/shopping_lists_controller.rb:30:in `set_recipe'
+Started GET "/recipes/" for ::1 at 2024-05-02 23:09:15 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3141)
+
+
+  
+NameError (undefined local variable or method `description' for Recipe:Class):
+  
+app/models/recipe.rb:7:in `<class:Recipe>'
+app/models/recipe.rb:1:in `<main>'
+app/controllers/recipes_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-05-02 23:09:38 +0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered partials/_menu.html.erb (Duration: 0.4ms | Allocations: 290)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered partials/_user.html.erb (Duration: 0.3ms | Allocations: 130)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1874)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 33351)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms | Allocations: 34410)
+
+
+Started GET "/foods" for ::1 at 2024-05-02 23:09:41 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 3885)
+
+
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/food.rb:8:in `<class:Food>'
+app/models/food.rb:1:in `<main>'
+app/controllers/foods_controller.rb:3:in `index'
+Started GET "/foods" for ::1 at 2024-05-02 23:10:59 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 3.3ms | Allocations: 3395)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.7ms | Allocations: 790)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.5ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 9458)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 23742)
+Completed 200 OK in 27ms (Views: 16.1ms | ActiveRecord: 3.9ms | Allocations: 32409)
+
+
+Started GET "/users" for ::1 at 2024-05-02 23:11:04 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered partials/_menu.html.erb (Duration: 0.1ms | Allocations: 129)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered partials/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2554)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 4434)
+
+
+Started GET "/foods" for ::1 at 2024-05-02 23:11:06 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.5ms | Allocations: 873)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.5ms | Allocations: 780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.2ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3284)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4599)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 6201)
+
+
+Started GET "/foods/1" for ::1 at 2024-05-02 23:11:08 +0300
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/show.html.erb within layouts/application
+  Rendered foods/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1509)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 1.2ms | Allocations: 4260)
+
+
+Started GET "/foods" for ::1 at 2024-05-02 23:11:10 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 2.8ms | Allocations: 872)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.0ms | Allocations: 780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 4.3ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3283)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4613)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 1.4ms | Allocations: 6205)
+
+
+Started GET "/foods/1/edit" for ::1 at 2024-05-02 23:11:11 +0300
+Processing by FoodsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/edit.html.erb within layouts/application
+  Rendered foods/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2343)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3660)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 1.1ms | Allocations: 6818)
+
+
+Started PUT "/foods/1" for ::1 at 2024-05-02 23:11:17 +0300
+Processing by FoodsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "food"=>{"name"=>"beans", "measurement_unit"=>"kilogram", "price"=>"7900.0"}, "commit"=>"Edit food", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:32:in `update'
+  [1m[36mFood Update (0.9ms)[0m  [1m[33mUPDATE "foods" SET "price" = $1, "updated_at" = $2 WHERE "foods"."id" = $3[0m  [["price", 7900.0], ["updated_at", "2024-05-02 20:11:17.733560"], ["id", 1]]
+  ↳ app/controllers/foods_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/foods_controller.rb:32:in `update'
+Redirected to http://localhost:3000/foods
+Completed 302 Found in 15ms (ActiveRecord: 8.6ms | Allocations: 5796)
+
+
+Started GET "/foods" for ::1 at 2024-05-02 23:11:17 +0300
+Processing by FoodsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.5ms | Allocations: 872)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.9ms | Allocations: 780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.0ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3329)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4652)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.9ms | Allocations: 6353)
+
+
+Started DELETE "/foods/1" for ::1 at 2024-05-02 23:11:23 +0300
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mFood Destroy (1.2ms)[0m  [1m[31mDELETE FROM "foods" WHERE "foods"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.0ms | Allocations: 4554)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "foods" violates foreign key constraint "fk_rails_cef9648c35" on table "recipe_foods"
+DETAIL:  Key (id)=(1) is still referenced from table "recipe_foods".
+):
+  
+app/controllers/foods_controller.rb:41:in `destroy'
+Started GET "/foods" for ::1 at 2024-05-02 23:15:24 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.9ms | Allocations: 7082)
+
+
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception, :destroy_async], but is :destory):
+  
+app/models/food.rb:3:in `<class:Food>'
+app/models/food.rb:1:in `<main>'
+app/controllers/foods_controller.rb:3:in `index'
+Started GET "/foods" for ::1 at 2024-05-02 23:18:46 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 2.0ms | Allocations: 2405)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.9ms | Allocations: 780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.5ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6734)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 21017)
+Completed 200 OK in 27ms (Views: 12.9ms | ActiveRecord: 4.2ms | Allocations: 29584)
+
+
+Started DELETE "/foods/1" for ::1 at 2024-05-02 23:18:52 +0300
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mRecipeFood Load (0.1ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 1]]
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mRecipeFood Destroy (0.3ms)[0m  [1m[31mDELETE FROM "recipe_foods" WHERE "recipe_foods"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mInventoryFood Load (0.1ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods" WHERE "inventory_foods"."food_id" = $1[0m  [["food_id", 1]]
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mFood Destroy (0.2ms)[0m  [1m[31mDELETE FROM "foods" WHERE "foods"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/foods_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/foods
+Completed 302 Found in 26ms (ActiveRecord: 6.2ms | Allocations: 15227)
+
+
+Started GET "/foods" for ::1 at 2024-05-02 23:18:52 +0300
+Processing by FoodsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 1.0ms | Allocations: 872)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/partials/_food.html.erb:4
+  Rendered partials/_food.html.erb (Duration: 0.6ms | Allocations: 780)
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2436)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3752)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 5360)
+
+
+Started GET "/users" for ::1 at 2024-05-02 23:18:55 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered partials/_menu.html.erb (Duration: 0.2ms | Allocations: 129)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered partials/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2554)
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 4419)
+
+
+Started GET "/inventories" for ::1 at 2024-05-02 23:18:56 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 0.6ms | Allocations: 325)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2843)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4260)
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 2.6ms | Allocations: 8090)
+
+
+Started GET "/inventories/new" for ::1 at 2024-05-02 23:18:59 +0300
+Processing by InventoriesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/new.html.erb within layouts/application
+  Rendered inventories/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2161)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 5037)
+
+
+Started POST "/inventories.1" for ::1 at 2024-05-02 23:19:08 +0300
+Processing by InventoriesController#create as */*
+  Parameters: {"authenticity_token"=>"[FILTERED]", "inventory"=>{"name"=>"inv four"}, "commit"=>"Create inventory"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/inventories_controller.rb:17:in `create'
+  [1m[36mInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "inventories" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "inv four"], ["user_id", 1], ["created_at", "2024-05-02 20:19:08.217580"], ["updated_at", "2024-05-02 20:19:08.217580"]]
+  ↳ app/controllers/inventories_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/inventories_controller.rb:17:in `create'
+Redirected to http://localhost:3000/inventories
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms | Allocations: 4013)
+
+
+Started GET "/inventories" for ::1 at 2024-05-02 23:19:08 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 0.3ms | Allocations: 143)
+  Rendered partials/_inventory.html.erb (Duration: 0.1ms | Allocations: 142)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1073)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2393)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 3985)
+
+
+Started GET "/inventories/1" for ::1 at 2024-05-02 23:19:10 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mInventoryFood Load (0.4ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods"[0m
+  ↳ app/views/inventories/show.html.erb:6
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_inventory_food.html.erb:2
+  Rendered partials/_inventory_food.html.erb (Duration: 3.1ms | Allocations: 2414)
+  Rendered inventories/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 5579)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6886)
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 3.4ms | Allocations: 9601)
+
+
+Started GET "/inventories/1/inventory_foods/new" for ::1 at 2024-05-02 23:19:12 +0300
+Processing by InventoryFoodsController#new as HTML
+  Parameters: {"inventory_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = $1 AND "inventories"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_foods_controller.rb:34:in `set_inventory'
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_foods/new.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/inventory_foods/new.html.erb:8
+  Rendered inventory_foods/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2056)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3434)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 7502)
+
+
+Started POST "/inventories/1/inventory_foods" for ::1 at 2024-05-02 23:19:18 +0300
+Processing by InventoryFoodsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "inventory_food"=>{"inventory_id"=>"1", "food_id"=>"2", "quantity"=>"56"}, "commit"=>"Create", "inventory_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = $1 AND "inventories"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_foods_controller.rb:34:in `set_inventory'
+[31mUnpermitted parameter: :inventory_id. Context: { controller: InventoryFoodsController, action: create, request: #<ActionDispatch::Request:0x00007ed7e5ca6228>, params: {"authenticity_token"=>"[FILTERED]", "inventory_food"=>{"inventory_id"=>"1", "food_id"=>"2", "quantity"=>"56"}, "commit"=>"Create", "controller"=>"inventory_foods", "action"=>"create", "inventory_id"=>"1"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/inventory_foods_controller.rb:19:in `create'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_foods_controller.rb:19:in `create'
+  [1m[36mInventoryFood Create (1.1ms)[0m  [1m[32mINSERT INTO "inventory_foods" ("inventory_id", "food_id", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["inventory_id", 1], ["food_id", 2], ["quantity", 56.0], ["created_at", "2024-05-02 20:19:18.672643"], ["updated_at", "2024-05-02 20:19:18.672643"]]
+  ↳ app/controllers/inventory_foods_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/inventory_foods_controller.rb:19:in `create'
+Redirected to http://localhost:3000/inventories/1
+Completed 302 Found in 23ms (ActiveRecord: 4.6ms | Allocations: 5664)
+
+
+Started GET "/inventories/1" for ::1 at 2024-05-02 23:19:18 +0300
+Processing by InventoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mInventoryFood Load (0.3ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods"[0m
+  ↳ app/views/inventories/show.html.erb:6
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_inventory_food.html.erb:2
+  Rendered partials/_inventory_food.html.erb (Duration: 0.9ms | Allocations: 800)
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/partials/_inventory_food.html.erb:2
+  Rendered partials/_inventory_food.html.erb (Duration: 1.1ms | Allocations: 802)
+  Rendered inventories/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2388)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3711)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.0ms | Allocations: 5851)
+
+
+Started GET "/inventories" for ::1 at 2024-05-02 23:19:21 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered partials/_inventory.html.erb (Duration: 0.2ms | Allocations: 142)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1074)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2400)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 4002)
+
+
+Started DELETE "/inventories/2" for ::1 at 2024-05-02 23:19:25 +0300
+Processing by InventoriesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/inventories_controller.rb:26:in `destroy'
+  [1m[36mInventory Destroy (1.0ms)[0m  [1m[31mDELETE FROM "inventories" WHERE "inventories"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/inventories_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/inventories_controller.rb:26:in `destroy'
+Redirected to http://localhost:3000/inventories
+Completed 302 Found in 13ms (ActiveRecord: 7.2ms | Allocations: 3556)
+
+
+Started GET "/inventories" for ::1 at 2024-05-02 23:19:25 +0300
+Processing by InventoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 0.2ms | Allocations: 143)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 864)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2184)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 3811)
+
+
