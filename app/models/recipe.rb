@@ -4,5 +4,5 @@ class Recipe < ApplicationRecord
   has_many :foods, through: :recipe_foods
   has_many :shopping_lists
 
-  validates :name, :preparation_time, :cooking_time, description, public, presence: true
+  validates :name, :preparation_time, :cooking_time, :description, :public, presence: true
 end
