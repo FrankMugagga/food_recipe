@@ -4,5 +4,6 @@ class Inventory < ApplicationRecord
   has_many :foods, through: :inventory_foods
   has_many :shopping_lists
 
-  validates :name, presence: true
+  validates :name, description presence: true
+
 end
