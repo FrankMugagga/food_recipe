@@ -13,8 +13,8 @@ RSpec.describe Inventory, type: :model do
     end
 
     it 'validates the presence of each field' do
-      is_expected.to validate_presence_of(:name).with_message( 'cannot be blank' )
-      is_expected.to validate_presence_of(:description).with_message( 'cannot be blank' )
+      is_expected.to validate_presence_of(:name).with_message('cannot be blank')
+      is_expected.to validate_presence_of(:description).with_message('cannot be blank')
     end
   end
 

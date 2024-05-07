@@ -4,12 +4,13 @@ RSpec.describe Recipe, type: :model do
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
     @user.confirm
-    @recipe = @user.recipes.create( user_id: @user.id, name: 'recipe one', preparation_time: 2.5, cooking_time: 3, description: 'recipe one is the very best', public: true )
+    @recipe = @user.recipes.create(user_id: @user.id, name: 'recipe one', preparation_time: 2.5, cooking_time: 3,
+                                   description: 'recipe one is the very best', public: true)
   end
 
   describe 'Validity of a  recipe' do
     it 'is valid if the fields are filled' do
-      expect( @recipe).to be_valid
+      expect(@recipe).to be_valid
     end
 
     it 'validates the presence of each field' do

@@ -8,7 +8,7 @@ RSpec.describe 'Foods', type: :request do
     @user.confirm
     expect(@user.confirmed?).to be true
     sign_in @user
-    @food = @user.foods.create(user_id: @user.id,name: 'cassava', measurement_unit: 'kilogram', price: 2000)
+    @food = @user.foods.create(user_id: @user.id, name: 'cassava', measurement_unit: 'kilogram', price: 2000)
   end
   describe 'GET /index' do
     it 'returns http success' do
@@ -33,7 +33,7 @@ RSpec.describe 'Foods', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'renders the show template' do 
+    it 'renders the show template' do
       get "/foods/#{@food.id}"
       expect(response).to render_template(:show)
     end

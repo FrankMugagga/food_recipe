@@ -61,5 +61,4 @@ RSpec.describe 'Inventories', type: :request do
       expect(response.body).to include('Create Inventory')
     end
   end
-
 end

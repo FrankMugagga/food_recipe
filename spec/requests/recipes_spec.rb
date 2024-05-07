@@ -8,7 +8,8 @@ RSpec.describe 'Recipes', type: :request do
     @user.confirm
     expect(@user.confirmed?).to be true
     sign_in @user
-    @recipe = @user.recipes.create( user_id: @user.id, name: 'recipe one', preparation_time: 2.5, cooking_time: 3, description: 'recipe one is the very best', public: true )
+    @recipe = @user.recipes.create(user_id: @user.id, name: 'recipe one', preparation_time: 2.5, cooking_time: 3,
+                                   description: 'recipe one is the very best', public: true)
   end
 
   describe 'GET /index' do

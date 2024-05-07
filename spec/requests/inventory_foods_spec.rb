@@ -8,9 +8,9 @@ RSpec.describe 'InventoryFoods', type: :request do
     @user.confirm
     expect(@user.confirmed?).to be true
     sign_in @user
-    @food = @user.foods.create(user_id: @user.id,name: 'cassava', measurement_unit: 'kilogram', price: 2000)
+    @food = @user.foods.create(user_id: @user.id, name: 'cassava', measurement_unit: 'kilogram', price: 2000)
     @inventory = @user.inventories.create(name: 'inventory one', user_id: @user.id, description: 'This inventory ....')
-    @inventory_food = InventoryFood.create( inventory_id: @inventory.id, food_id: @food.id, quantity: 80  )
+    @inventory_food = InventoryFood.create(inventory_id: @inventory.id, food_id: @food.id, quantity: 80)
   end
 
   describe 'GET /new' do

@@ -4,5 +4,5 @@ class Inventory < ApplicationRecord
   has_many :foods, through: :inventory_foods
   has_many :shopping_lists, dependent: :destroy
 
-  validates :name, :description, presence: { message: 'cannot be blank' }  
+  validates :name, :description, presence: { message: 'cannot be blank' }
 end

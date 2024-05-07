@@ -29,8 +29,8 @@ RSpec.describe User, type: :model do
       @user.password = 'As@123'
       @user.password_confirmation = 'As@123'
       @user.valid?
-      expected_message = 'password complexity requirement not met.' +
-      'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+      expected_message = 'password complexity requirement not met.' \
+                         'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
       expect(@user.errors[:password]).to include(expected_message)
     end
 
@@ -38,8 +38,8 @@ RSpec.describe User, type: :model do
       @user.password = 'as@1234567'
       @user.password_confirmation = 'as@1234567'
       @user.valid?
-      expected_message = 'password complexity requirement not met.' +
-      'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+      expected_message = 'password complexity requirement not met.' \
+                         'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
       expect(@user.errors[:password]).to include(expected_message)
     end
 
@@ -47,8 +47,8 @@ RSpec.describe User, type: :model do
       @user.password = 'AS@1234567'
       @user.password_confirmation = 'AS@1234567'
       @user.valid?
-      expected_message = 'password complexity requirement not met.' +
-      'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+      expected_message = 'password complexity requirement not met.' \
+                         'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
       expect(@user.errors[:password]).to include(expected_message)
     end
 
@@ -56,8 +56,8 @@ RSpec.describe User, type: :model do
       @user.password = 'AS@asdfgh'
       @user.password_confirmation = 'AS@asdfghj'
       @user.valid?
-      expected_message = 'password complexity requirement not met.' +
-      'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+      expected_message = 'password complexity requirement not met.' \
+                         'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
       expect(@user.errors[:password]).to include(expected_message)
     end
 
@@ -65,8 +65,8 @@ RSpec.describe User, type: :model do
       @user.password = 'AS0asdfgh'
       @user.password_confirmation = 'AS0asdfghj'
       @user.valid?
-      expected_message = 'password complexity requirement not met.' +
-      'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+      expected_message = 'password complexity requirement not met.' \
+                         'Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
       expect(@user.errors[:password]).to include(expected_message)
     end
 
@@ -75,7 +75,6 @@ RSpec.describe User, type: :model do
       expect(@user1).to be_invalid
       expect(@user1.errors[:email]).to include('has already been taken')
     end
-
   end
 
   describe 'the user relationships' do
