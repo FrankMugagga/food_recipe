@@ -18569,3 +18569,85 @@ Migrating to AddDescriptionToInventories (20240505193706)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1315877123152921350)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-05-08 00:08:21 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 841)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4218)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 35644)
+Completed 200 OK in 64ms (Views: 46.6ms | ActiveRecord: 3.6ms | Allocations: 48323)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-05-08 00:08:33 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zed@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zed@g.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 193ms (ActiveRecord: 1.5ms | Allocations: 5642)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 00:08:33 +0300
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered partials/_menu.html.erb (Duration: 0.7ms | Allocations: 287)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered partials/_user.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1874)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3267)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 4076)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2024-05-08 00:08:39 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (1.9ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered partials/_inventory.html.erb (Duration: 0.5ms | Allocations: 380)
+  Rendered inventories/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4270)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5675)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 3.6ms | Allocations: 9821)
+
+
+Started GET "/inventories/1" for 127.0.0.1 at 2024-05-08 00:08:44 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mInventoryFood Load (3.2ms)[0m  [1m[34mSELECT "inventory_foods".* FROM "inventory_foods"[0m
+  ↳ app/views/inventories/show.html.erb:6
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/partials/_inventory_food.html.erb:2
+  Rendered partials/_inventory_food.html.erb (Duration: 24.2ms | Allocations: 8653)
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/partials/_inventory_food.html.erb:2
+  Rendered partials/_inventory_food.html.erb (Duration: 1.2ms | Allocations: 802)
+  Rendered inventories/show.html.erb within layouts/application (Duration: 41.0ms | Allocations: 13637)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 14962)
+Completed 200 OK in 51ms (Views: 34.9ms | ActiveRecord: 8.0ms | Allocations: 18849)
+
+
+Started GET "/inventories/1/inventory_foods/new" for 127.0.0.1 at 2024-05-08 00:08:48 +0300
+Processing by InventoryFoodsController#new as HTML
+  Parameters: {"inventory_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = $1 AND "inventories"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_foods_controller.rb:34:in `set_inventory'
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_foods/new.html.erb within layouts/application
+  [1m[36mFood Load (0.7ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/inventory_foods/new.html.erb:8
+  Rendered inventory_foods/new.html.erb within layouts/application (Duration: 34.4ms | Allocations: 2142)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 3526)
+Completed 200 OK in 46ms (Views: 36.1ms | ActiveRecord: 1.4ms | Allocations: 9267)
+
+
