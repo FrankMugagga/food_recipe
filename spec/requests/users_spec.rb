@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
+  
 include Devise::Test::IntegrationHelpers
+
   describe 'GET /index' do
    it 'redirects to sign-in page if the user is not logged in' do
     get '/users'
