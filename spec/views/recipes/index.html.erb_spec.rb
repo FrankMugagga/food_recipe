@@ -12,7 +12,7 @@ RSpec.describe 'recipes/index.html.erb', type: :view do
     @recipe = @user.recipes.create(user_id: @user.id, name: 'recipe one', preparation_time: 2.5, cooking_time: 3,
                                    description: 'recipe one is the very best', public: true)
     @recipe2 = @user.recipes.create(user_id: @user.id, name: 'recipe two', preparation_time: 1, cooking_time: 2,
-                                   description: 'recipe two was introduced', public: false)
+                                    description: 'recipe two was introduced', public: false)
     visit recipes_path
   end
 
@@ -29,5 +29,4 @@ RSpec.describe 'recipes/index.html.erb', type: :view do
       expect(page.current_path).to eq(users_path)
     end
   end
-
 end

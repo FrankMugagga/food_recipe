@@ -15,15 +15,15 @@ RSpec.describe 'recipes/new.html.erb', type: :view do
   end
 
   describe 'recipe new' do
-   it 'renders the recipe new' do
-    expect(page).to have_content('Create Recipe')
-    expect(page).to have_field(@recipe_preparation_time)
-    expect(page).to have_button('Create recipe')
-   end
+    it 'renders the recipe new' do
+      expect(page).to have_content('Create Recipe')
+      expect(page).to have_field(@recipe_preparation_time)
+      expect(page).to have_button('Create recipe')
+    end
 
-   it 'redirects to the recipe index' do
-    click_link 'Back'
-    expect(page.current_path).to eq(recipes_path)
-  end
+    it 'redirects to the recipe index' do
+      click_link 'Back'
+      expect(page.current_path).to eq(recipes_path)
+    end
   end
 end

@@ -17,8 +17,8 @@ RSpec.describe 'recipes/show.html.erb', type: :view do
   describe 'recipe show' do
     it 'renders the recipe show' do
       expect(page).to have_content(@recipe.name)
-      expect(page).to have_link( 'Add ingredient', href: new_recipe_recipe_food_path(@recipe) )
-      expect(page).to have_link( 'Generate shopping list', href: new_recipe_shopping_list_path(@recipe))
+      expect(page).to have_link('Add ingredient', href: new_recipe_recipe_food_path(@recipe))
+      expect(page).to have_link('Generate shopping list', href: new_recipe_shopping_list_path(@recipe))
     end
 
     it 'redirects to the recipe index' do
