@@ -16,8 +16,8 @@ RSpec.describe 'inventories/show,.html.erb', type: :view do
   describe 'inventory show page' do
     it 'renders the inventory show page' do
       expect(page).to have_content('Inventory')
-      expect(page).to have_content( @inventory.name )
-      expect(page).to have_link('Add Food', href: new_inventory_inventory_food_path(@inventory) )
+      expect(page).to have_content(@inventory.name)
+      expect(page).to have_link('Add Food', href: new_inventory_inventory_food_path(@inventory))
     end
 
     it 'redirects to the inventories index' do
@@ -25,5 +25,4 @@ RSpec.describe 'inventories/show,.html.erb', type: :view do
       expect(page.current_path).to eq(inventories_path)
     end
   end
-
 end

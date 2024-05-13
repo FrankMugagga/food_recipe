@@ -9,15 +9,15 @@ RSpec.describe 'inventories/new,.html.erb', type: :view do
     @user.confirm
     expect(@user.confirmed?).to be true
     sign_in @user
-       
+
     visit new_inventory_path
   end
 
   describe 'inventory new page' do
     it 'will render inventory new page' do
-      expect(page).to have_content( 'Create Inventory' )
-      expect(page).to have_button('Create inventory')    
-      expect(page).to have_field(@inventory_name)  
+      expect(page).to have_content('Create Inventory')
+      expect(page).to have_button('Create inventory')
+      expect(page).to have_field(@inventory_name)
     end
 
     it 'redirects to the user index' do

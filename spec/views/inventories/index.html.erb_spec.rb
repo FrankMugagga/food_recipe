@@ -10,14 +10,15 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
     expect(@user.confirmed?).to be true
     sign_in @user
     @inventory = @user.inventories.create(name: 'inventory one', user_id: @user.id, description: 'This inventory ....')
-    @inventory1 = @user.inventories.create(name: 'inventory two', user_id: @user.id, description: 'These inventories ....')
+    @inventory1 = @user.inventories.create(name: 'inventory two', user_id: @user.id,
+                                           description: 'These inventories ....')
     visit inventories_path
   end
 
   describe 'inventory index page' do
     it 'renders the inventory index page' do
       page.has_content?('Inventories')
-      expect(page).to have_link( 'Create inventory', href: new_inventory_path )
+      expect(page).to have_link('Create inventory', href: new_inventory_path)
       expect(page).to have_content(@inventory1.name)
       expect(page).to have_content(@inventory.name)
     end
@@ -27,5 +28,4 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
       expect(page.current_path).to eq(users_path)
     end
   end
-  
 end
