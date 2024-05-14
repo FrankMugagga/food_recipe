@@ -9,7 +9,6 @@ RSpec.describe 'inventories/new,.html.erb', type: :view do
     @user.confirm
     expect(@user.confirmed?).to be true
     sign_in @user
-
     visit new_inventory_path
   end
 
