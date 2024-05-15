@@ -14,15 +14,14 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
   end
 
   describe 'food show page' do
-    
     it 'renders the food show page' do
-        expect(page).to have_content(@food.name)
-        expect(page).to have_content(@food.measurement_unit)
+      expect(page).to have_content(@food.name)
+      expect(page).to have_content(@food.measurement_unit)
     end
 
     it 'redirects to the food index' do
-        click_link 'Back'
-        expect(page.current_path).to eq(foods_path)
-      end
+      click_link 'Back'
+      expect(page.current_path).to eq(foods_path)
+    end
   end
 end

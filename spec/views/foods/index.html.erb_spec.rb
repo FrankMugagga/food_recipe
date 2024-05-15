@@ -16,7 +16,7 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
 
   describe 'food index page' do
     it 'renders the food index page' do
-      expect(page).to have_link( 'Add food', href: new_food_path )
+      expect(page).to have_link('Add food', href: new_food_path)
       expect(page).to have_content(@food.name)
       expect(page).to have_content(@food1.name)
     end

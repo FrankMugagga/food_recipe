@@ -18,14 +18,14 @@ RSpec.describe 'recipe_foods/new.html.erb', type: :view do
 
   describe 'recipe_food new page' do
     it 'renders the new_recipe_food page' do
-        expect(page).to have_content('Add ingredient')
-        expect(page).to have_field(@recipe_food_quantity)
-        expect(page).to have_button('Add ingredient')
+      expect(page).to have_content('Add ingredient')
+      expect(page).to have_field(@recipe_food_quantity)
+      expect(page).to have_button('Add ingredient')
     end
 
     it 'redirects to the inventory show' do
-        click_link 'Back'
-        expect(page.current_path).to eq(recipe_path(@recipe))
-      end
+      click_link 'Back'
+      expect(page.current_path).to eq(recipe_path(@recipe))
+    end
   end
 end

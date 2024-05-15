@@ -15,7 +15,7 @@ RSpec.describe 'public_recipes/index.html.erb', type: :view do
   describe 'public recipes index page' do
     it 'renders the public recipes index page' do
       expect(page).to have_content('Public Recipes')
-      expect(page).to have_content(@user_food_total_price )
+      expect(page).to have_content(@user_food_total_price)
     end
 
     it 'redirects to the users path' do
