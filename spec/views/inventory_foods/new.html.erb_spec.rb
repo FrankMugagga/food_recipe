@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'inventories/new,.html.erb', type: :view do
   include Devise::Test::IntegrationHelpers
   include Capybara::DSL
-
   
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
