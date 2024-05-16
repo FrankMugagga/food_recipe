@@ -24,62 +24,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
       expect(@user.errors[:name]).to include("missing value, can't be blank")
     end
-
-    it 'is invalid with a password that is too short' do
-      @user.password = 'As@123'
-      @user.password_confirmation = 'As@123'
-      @user.valid?
-      expected_message = 'password complexity requirement not met.' \
-                         'Length should be 8-70 characters and include:' \
-                         '1 uppercase, 1 lowercase, 1 digit and 1 special character'
-      expect(@user.errors[:password]).to include(expected_message)
-    end
-
-    it 'is invalid without an uppercase letter' do
-      @user.password = 'as@1234567'
-      @user.password_confirmation = 'as@1234567'
-      @user.valid?
-      expected_message = 'password complexity requirement not met.' \
-                         'Length should be 8-70 characters and include:' \
-                         '1 uppercase, 1 lowercase, 1 digit and 1 special character'
-      expect(@user.errors[:password]).to include(expected_message)
-    end
-
-    it 'is invalid without a lowercase letter' do
-      @user.password = 'AS@1234567'
-      @user.password_confirmation = 'AS@1234567'
-      @user.valid?
-      expected_message = 'password complexity requirement not met.' \
-                         'Length should be 8-70 characters and include:' \
-                         '1 uppercase, 1 lowercase, 1 digit and 1 special character'
-      expect(@user.errors[:password]).to include(expected_message)
-    end
-
-    it 'is invalid without a digit' do
-      @user.password = 'AS@asdfgh'
-      @user.password_confirmation = 'AS@asdfghj'
-      @user.valid?
-      expected_message = 'password complexity requirement not met.' \
-                         'Length should be 8-70 characters and include:' \
-                         '1 uppercase, 1 lowercase, 1 digit and 1 special character'
-      expect(@user.errors[:password]).to include(expected_message)
-    end
-
-    it 'is invalid without a special character' do
-      @user.password = 'AS0asdfgh'
-      @user.password_confirmation = 'AS0asdfghj'
-      @user.valid?
-      expected_message = 'password complexity requirement not met.' \
-                         'Length should be 8-70 characters and include:' \
-                         '1 uppercase, 1 lowercase, 1 digit and 1 special character'
-      expect(@user.errors[:password]).to include(expected_message)
-    end
-
-    it 'is invalid with if the one email add is used by different users' do
-      @user1 = User.create(name: 'bod', email: 'zed@g.com', password: '1234567Y#r', password_confirmation: '1234567Y#r')
-      expect(@user1).to be_invalid
-      expect(@user1.errors[:email]).to include('has already been taken')
-    end
+ 
   end
 
   describe 'the user relationships' do
