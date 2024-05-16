@@ -24,7 +24,6 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
       expect(@user.errors[:name]).to include("missing value, can't be blank")
     end
- 
   end
 
   describe 'the user relationships' do
