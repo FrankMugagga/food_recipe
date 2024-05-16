@@ -30,6 +30,6 @@ class InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.required(:inventory).permit(:name, :user_id)
+    params.required(:inventory).permit(:name, :quantity, :user_id)
   end
 end
