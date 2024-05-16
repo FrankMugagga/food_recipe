@@ -30,8 +30,5 @@ RSpec.describe Inventory, type: :model do
     it 'has many foods through inventory foods' do
       expect(@inventory).to have_many(:foods).through(:inventory_foods)
     end
-
-    it '' do
-    end
   end
 end
