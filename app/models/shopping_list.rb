@@ -4,6 +4,7 @@ class ShoppingList < ApplicationRecord
 
   def missing_items
     return @missing_items if defined?(@missing_items)
+
     @missing_items = calculate_missing_items
   end
 
