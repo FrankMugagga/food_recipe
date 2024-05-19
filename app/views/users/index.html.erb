@@ -1,6 +1,7 @@
-<% if user_signed_in? %>
+<section>
+  <% if user_signed_in? %>
   <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-  
+
   <h1>Welcome <%= current_user.name %> </h1>
   <%= render partial: 'partials/menu' %>
   <br>
@@ -10,4 +11,5 @@
       <li> <%= render partial: 'partials/user', locals: { user:user } %> </li>
     </ul>   
   <% end %>
-<% end %>
+  <% end %>
+</section>
