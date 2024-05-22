@@ -1,12 +1,25 @@
-<h1>Inventory</h1>
-<%= @inventory.id %> <%= @inventory.name %>
+<section>
+  <h1 class='head'>Inventory: <%= @inventory.name %> <%= @inventory.id %> </h1>  
 
-<%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory) %>
+  <br />
+  <div class='button_container'>
+    <%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory), class:'button' %>
+  </div>
+  <hr>
 
-<% @inventory_foods.each do |inventory| %>
-    <ul>
-      <li> <%= render partial: 'partials/inventory_food', locals: { inventory:inventory } %> </li>
+  <br />
+
+  <div class='inv_food_cont'>
+    <ul class='inv_food_head'>
+      <li class='inv_food_lis'>Food</li>
+      <li class='inv_food_lis'>Quantity</li>
+      <li class='inv_food_lis'>Actions</li>
     </ul>
-<% end %>
+    <% @inventory_foods.each do |inventory| %>  
+      <%= render partial: 'partials/inventory_food', locals: { inventory:inventory } %> 
+    <% end %>
+  </div>
 
-<%= link_to 'Back', inventories_path %>
+  <br />
+  <%= link_to 'Back', inventories_path %>
+</section>

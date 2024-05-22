@@ -1,5 +1,5 @@
-
-<%= inventory.food.name %>
-<%= inventory.quantity %>
-
-<%= link_to 'Delete', inventory_inventory_food_path(@inventory, inventory), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<ul class='inv_food_head'>
+  <li class='inv_food_lis'> <%= inventory.food.name %> </li>
+  <li class='inv_food_lis'> <%= inventory.quantity %> </li>
+  <li class='inv_food_lis'> <%= link_to 'Delete', inventory_inventory_food_path(@inventory, inventory), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %> </li>
+</ul>

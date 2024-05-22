@@ -1,7 +1,10 @@
-<%= food.name %>
-<%= food.measurement_unit %>
-<%= food.price %>
-By <%= food.user.name %>
-<%= link_to 'Show', food %>
-<%= link_to 'Edit', edit_food_path(food) %>
-<%= link_to 'Delete', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<ul class='food'>
+  <li class='food_list1'> <%= food.name %> </li>
+  <li class='food_list1'> <%= food.measurement_unit %> </li>
+  <li class='food_list1'> <%= food.price %> </li>
+  <li>
+    <div class='food_action'>
+      <%= link_to 'Delete', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
+  </li>
+</ul>

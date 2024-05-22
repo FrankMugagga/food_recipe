@@ -1,10 +1,26 @@
+<section>
+  
+<br />
+  <div class='button_container'>
+    <%= link_to 'Add food', new_food_path, class:'button' %>
+  </div>
 
-<%= link_to 'Add food', new_food_path %>
-
-<% @foods.each do |food| %>
-    <ul>
-      <li>  <%= render partial: 'partials/food', locals: { food:food } %> </li>
+  <br />
+  <br />
+  <div class='food_container'>
+    <ul class='food'>
+      <li class='food_list'> <b>Food</b> </li>
+      <li class='food_list'> <b>Measurement Unit</b> </li>
+      <li class='food_list'> <b> Price </b> </li>
+      <li class='food_action'> <b>Actions</b> </li>
     </ul>
-<% end %>
+    <% @foods.each do |food| %>
+      
+      <%= render partial: 'partials/food', locals: { food:food } %> 
+      
+    <% end %>
+  </div>
 
-<%= link_to 'Back', users_path %>
+  <br />
+  <%= link_to 'Back', users_path %>
+</section>
