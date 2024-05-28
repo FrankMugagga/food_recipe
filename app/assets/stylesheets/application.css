@@ -107,9 +107,9 @@ section {
   border: 2px solid black;
 }
 
-.food_container:hover{
-  box-shadow: 0 2px 5px; 
-  border: none; 
+.food_container:hover {
+  box-shadow: 0 2px 5px;
+  border: none;
 }
 
 .food {
@@ -125,7 +125,7 @@ section {
 }
 
 .food:nth-last-child(odd) {
-  background:  rgba(167, 209, 108, 0.857);
+  background: rgba(167, 209, 108, 0.857);
 }
 
 .food_list:nth-child(odd) {
@@ -136,7 +136,7 @@ section {
   padding: 4px;
 }
 
-.button_container{
+.button_container {
   display: flex;
   justify-content: right;
 }
@@ -248,7 +248,6 @@ section {
 .recipe_show {
   display: flex;
   justify-content: space-between;
-
 }
 
 .public {
@@ -288,13 +287,12 @@ section {
   align-items: center;
   padding: 5px;
   border: 2px solid black;
-
   margin-bottom: 5px;
 }
 
 .public_cont_left {
   display: flex;
-  justify-content: right;  
+  justify-content: right;
   width: 30%;
 }
 
@@ -305,7 +303,7 @@ section {
 }
 
 @media screen and (max-width: 786px) {
-  *{
+  * {
     font-size: 16px;
   }
 
