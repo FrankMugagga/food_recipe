@@ -1,10 +1,19 @@
-<h1>Recipes</h1>
-<%= link_to 'Add recipe', new_recipe_path %>
+<section>
+  <h1 class='head'> Recipes </h1>
 
-<% @recipes.each do |recipe| %>
-    <ul>
+  <br />
+  <div class='button_container'>
+    <%= link_to 'Add recipe', new_recipe_path, class:'button' %>
+  </div>
+  <hr />
+
+  <br />
+  <% @recipes.each do |recipe| %>
+    <ul class='recipe_cont'>
       <li> <%= render partial: 'partials/recipe', locals: {recipe:recipe} %> </li>
     </ul>
-<% end %>
+  <% end %>
 
-<%= link_to 'Back', users_path %>
+  <br />
+  <%= link_to 'Back', users_path %>
+</section>

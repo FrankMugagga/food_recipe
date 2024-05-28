@@ -1,27 +1,48 @@
-<h1><%= @recipe.name %></h1>
+<section>
+  <br />
+  <h1 class='head'>Recipe: <i> <%= @recipe.name %> </i></h1>
 
-<% if @recipe.public %>
-  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %> 
-<% else %>
-  <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch %>
-<% end %>
-<%= @recipe.public %>
+  <br />
+  <div class='recipe_show'>
+    preparation time: <%= @recipe.preparation_time %>
+    <% if @recipe.public %>
+      <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
+    <% else %>
+      <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
+    <% end %>
+  </div>
 
-<%= @recipe.preparation_time %>
-<%= @recipe.cooking_time %>
-<%= @recipe.description %>
+  <br />
+  Cooking time : <%= @recipe.cooking_time %>
+  <br /> <br />
+  Description: <%= @recipe.description %>
+ 
+  <br />
+  <i> (By <%= @recipe.user.name %>) </i>
+  <br /><br />
 
-By <%= @recipe.user.name %>
+  <div class='recipe_buttons'>
+    <%= link_to 'Add ingredient Quantity', new_recipe_recipe_food_path(@recipe), class:'recipe_but' %>
+    <%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe), class:'recipe_but' %>
+  </div>
+  <br />
+  <hr>
 
-<%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %>
+  <br /><br />
+  <h2 class='head'> Required Ingredient Quantity </h2>
+  <div class='recipe_f'>
+    <ul class='recipe_food_cont'>
+      <li class='recipe_food_items'>Date</li>
+      <li class='recipe_food_items'>Food</li>
+      <li class='recipe_food_items'>Quantity</li>
+      <li class='recipe_food_items'>Value</li>
+      <li class='recipe_food_items'>Actions</li>
+    </ul>
+    <% @recipe_foods.each do |recipe| %>
+      <%= render partial: 'partials/recipe_food', locals: { recipe:recipe } %>
+    <% end %>
+  </div>
 
-<%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe) %>
-
-<% @recipe_foods.each do |recipe| %>
-  <ul>
-    <li> <%= render partial: 'partials/recipe_food', locals: { recipe:recipe } %> </li>
-  </ul>
-<% end %>
-
-<%= link_to 'Back', recipes_path %>
-
+  <br /> <br />
+  <%= link_to 'Back', recipes_path %>
+</section>

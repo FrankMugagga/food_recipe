@@ -1,15 +1,22 @@
-<h1>Add ingredient</h1>
+<fieldset>
+  <legend> <h1>Add ingredient</h1> </legend>
 
-<%= form_with(model: @recipe_food, url: recipe_recipe_foods_path(@recipe), local: true) do |form| %>
+  <br /><br />
+  <%= form_with(model: @recipe_food, url: recipe_recipe_foods_path(@recipe), local: true) do |form| %>
     <%= form.hidden_field :recipe_id, value: @recipe.id %>
 
-    <%= form.label :food_id, 'Select Food' %>
-    <%= form.collection_select :food_id, Food.all, :id, :name, include_blank: true %>
+    <%= form.label :food_id, 'Select Food', hidden: true %>
+    <%= form.collection_select :food_id, Food.all, :id, :name, include_blank: 'Select Food' %>
 
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <br /> <br />
+    <%= form.label :quantity, hidden: true %>
+    <%= form.text_field :quantity, class:'input', placeholder: 'Quantity' %>
 
-    <%= form.submit 'Add ingredient' %>
-<% end %>
+    <br /> <br />
+    <div class="actions">
+      <%= form.submit 'Add ingredient', class: 'submit' %>
+    </div>
+  <% end %>
 
-<%= link_to 'Back', recipe_path(@recipe) %>
+  <%= link_to 'Back', recipe_path(@recipe) %>
+</fieldset>

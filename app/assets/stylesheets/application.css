@@ -63,7 +63,7 @@ fieldset > legend {
 
 section {
   padding: 5px;
-  width: 50%;
+  width: 70%;
   min-height: 100%;
   background: rgba(243, 237, 237, 0.412);
 }
@@ -141,13 +141,15 @@ section {
   justify-content: right;
 }
 
-.button {
+.button,
+.recipe_but {
   padding: 5px;
   border-radius: 5px;
   border: 2px solid black;
 }
 
-.button:hover {
+.button:hover,
+.recipe_but:hover {
   box-shadow: 0 2px 5px;
   border: none;
 }
@@ -215,6 +217,92 @@ section {
   padding: 5px;
 }
 
+.recipe_cont {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.recipe_cont > li {
+  display: flex;
+  padding: 5px;
+}
+
+.recipe_left,
+.recipe_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe_left {
+  width: 40%;
+}
+
+.recipe_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.recipe_show {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.public {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.recipe_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe_f {
+  border: 2px solid black;
+}
+
+.recipe_food_cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.recipe_food_cont:nth-child(odd) {
+  background: rgb(168, 203, 202);
+}
+
+.recipe_food_items {
+  width: 25%;
+  padding: 5px;
+  border-right: 2px solid black;
+}
+
+.public_cont {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid black;
+
+  margin-bottom: 5px;
+}
+
+.public_cont_left {
+  display: flex;
+  justify-content: right;  
+  width: 30%;
+}
+
+.public_cont_right {
+  display: flex;
+  justify-content: right;
+  width: 40%;
+}
 
 @media screen and (max-width: 786px) {
   *{

@@ -1,10 +1,29 @@
-<h1>Public Recipes</h1>
-<% @recipes.each do |recipe| %>
-    <%= recipe.name %>
-    By <%= recipe.user.name %>
+<% if @recipes.empty? %>
+ <section>
+   <p>There are no public recipes!</p>
+ </section>
+<% else %>
+  <section>
+    <br />
+    <h1 class='head'>Public Recipes</h1>
+
+    <br /><br />
+      <% @recipes_data.each do |data| %>
+        <div class='public_cont'>
+          <div class='public_cont_left' >
+            <%= data[:recipe].name %>  
+            <br /> <br /> <br /> 
+            By: <%= data[:recipe].user.name %>
+          </div>
+
+          <div class='public_cont_right'>
+            Total food items:<%= data[:total_items] %>
+            <br /> <br /> 
+            Total price: <%= data[:total_price] %>
+          </div>
+        </div>
+      <% end %>
+
+    <%= link_to 'Back', users_path %>
+</section>
 <% end %>
-
-Total food items: <%= @user_food_count %>
-Total price: <%= @user_food_total_price %>
-
-<%= link_to 'Back', users_path %>
