@@ -3,7 +3,9 @@
   <br />
   <br />
   <%= link_to 'Show', recipe %>
-  <%= link_to 'Delete', recipe, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <% if can? :manage, recipe %>
+    <%= link_to 'Delete', recipe, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <%end %>
 </div>
 
 <div class='recipe_right'>

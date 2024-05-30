@@ -1,7 +1,12 @@
 <div class='inv_name'>
   <%= inventory.name %>
+  
   <%= link_to 'Show', inventory %>
-  <%= link_to 'Delete', inventory, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <% if can? :manage, inventory %>
+    <%= link_to 'Delete', inventory, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <% else %>
+   <p>---</p>
+  <% end %>
 </div>
 
 <div class='inv_desc'>

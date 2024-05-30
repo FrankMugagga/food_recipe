@@ -1,6 +1,8 @@
 <% if @recipes.empty? %>
  <section>
+   <h1 class='head'>Public Recipes</h1>
    <p>There are no public recipes!</p>
+   <%= link_to 'Back', users_path %>
  </section>
 <% else %>
   <section>

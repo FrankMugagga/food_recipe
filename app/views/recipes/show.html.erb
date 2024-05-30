@@ -22,19 +22,23 @@
   <br /><br />
 
   <div class='recipe_buttons'>
-    <%= link_to 'Add ingredient Quantity', new_recipe_recipe_food_path(@recipe), class:'recipe_but' %>
-    <%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe), class:'recipe_but' %>
+    <% if can? :manage, @recipe %>
+      <%= link_to 'Add ingredient Quantity', new_recipe_recipe_food_path(@recipe), class:'recipe_but' %>
+      <%= link_to 'Generate shopping list', new_recipe_shopping_list_path(@recipe), class:'recipe_but' %>
+    <% end %>
   </div>
   <br />
   <hr>
 
   <br /><br />
   <h2 class='head'> Required Ingredient Quantity </h2>
+  <br />
   <div class='recipe_f'>
     <ul class='recipe_food_cont'>
       <li class='recipe_food_items'>Date</li>
       <li class='recipe_food_items'>Food</li>
       <li class='recipe_food_items'>Quantity</li>
+      <li class='recipe_food_items'>Price</li>
       <li class='recipe_food_items'>Value</li>
       <li class='recipe_food_items'>Actions</li>
     </ul>

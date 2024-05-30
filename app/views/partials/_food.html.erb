@@ -4,7 +4,9 @@
   <li class='food_list1'> <%= food.price %> </li>
   <li>
     <div class='food_action'>
-      <%= link_to 'Delete', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <% if can? :manage, food %>
+        <%= link_to 'Delete', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </li>
 </ul>

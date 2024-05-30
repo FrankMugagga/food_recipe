@@ -1,28 +1,23 @@
 <section>
   <% if user_signed_in? %>
-  <div class="logout">
-    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'submit' %>
-  </div>
+    <% current_time = Time.now %>
+    <% if current_time.hour >= 0 && current_time.hour < 12 %>
+      <h1>Good morning <em> <%= current_user.name %> </em>, you are welcome  </h1>
+    <% elsif current_time.hour >= 12 && current_time.hour < 18 %>
+      <h1>Good afternoon <%= current_user.name %>, you are welcome  </h1>
+    <% else %>
+      <h1> Good evening <%= current_user.name %>, you are welcome  </h1>
+    <% end %>
 
-  <br />
-  <% current_time = Time.now %>
-  <% if current_time.hour >= 0 && current_time.hour < 12 %>
-    <h1>Good morning <em> <%= current_user.name %> </em>, you are welcome  </h1>
-  <% elsif current_time.hour >= 12 && current_time.hour < 18 %>
-    <h1>Good afternoon <%= current_user.name %>, you are welcome  </h1>
-  <% else %>
-    <h1> Good evening <%= current_user.name %>, you are welcome  </h1>
-  <% end %>
-
-  <br />
-  <%= render partial: 'partials/menu' %>
-  <br />
-  <br />
-  <h2>Chefs</h2>
-  <% @users.each do |user| %>
-    <ul class='users'>
-      <li> <%= render partial: 'partials/user', locals: { user:user } %> </li>
-    </ul>   
-  <% end %>
+    <br />
+    <%= render partial: 'partials/menu' %>
+    <br />
+    <br />
+    <h2>Chefs</h2>
+    <% @users.each do |user| %>
+      <ul class='users'>
+        <li> <%= render partial: 'partials/user', locals: { user:user } %> </li>
+      </ul>   
+    <% end %>
   <% end %>
 </section>

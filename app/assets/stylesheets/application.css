@@ -70,8 +70,9 @@ section {
 
 .logout {
   display: flex;
-  justify-content: right;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
   background: red;
 }
 
@@ -300,6 +301,46 @@ section {
   display: flex;
   justify-content: right;
   width: 40%;
+}
+
+.shoppy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.shop {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  width: 70%;
+}
+
+.shop_{
+  width: 50%;
+  border-right: 2px solid red;
+}
+
+.shop_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.shop_list {
+  display: flex;
+  width: 70%;
+}
+
+.shop_list_items {
+  border: 2px solid black;
+  width: 33%;
+  padding: 5px;
+  border-right: 2px solid black;
 }
 
 @media screen and (max-width: 786px) {

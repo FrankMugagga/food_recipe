@@ -1,5 +1,5 @@
 <section>
-  
+  <h1 class='head'> Food List</h1>
 <br />
   <div class='button_container'>
     <%= link_to 'Add food', new_food_path, class:'button' %>
@@ -11,7 +11,7 @@
     <ul class='food'>
       <li class='food_list'> <b>Food</b> </li>
       <li class='food_list'> <b>Measurement Unit</b> </li>
-      <li class='food_list'> <b> Price </b> </li>
+      <li class='food_list'> <b> Unit Price </b> </li>
       <li class='food_action'> <b>Actions</b> </li>
     </ul>
     <% @foods.each do |food| %>
