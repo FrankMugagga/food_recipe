@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource 
+  load_and_authorize_resource
   def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    @user_public_recipe = @user.recipes.where(public:true)
+    @user_public_recipe = @user.recipes.where(public: true)
   end
 
   private

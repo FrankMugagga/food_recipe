@@ -2,7 +2,6 @@ class RecipeFoodsController < ApplicationController
   before_action :set_recipe, only: %i[new create destroy]
   before_action :set_recipe_food, only: [:destroy]
 
-
   def index
     @recipe_foods = RecipeFood.all
   end
