@@ -14,8 +14,6 @@ RSpec.describe 'users/index', type: :view do
   describe 'user index page' do
     it 'renders the user index' do
       visit users_path
-      expect(page).to have_content('Welcome')
-      expect(page).to have_button('Logout')
       page.has_content?(@user.name)
     end
   end

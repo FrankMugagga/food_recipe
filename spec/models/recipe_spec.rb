@@ -31,7 +31,7 @@ RSpec.describe Recipe, type: :model do
     end
 
     it 'has one shopping list' do
-      expect(@recipe).to have_one(:shopping_list).dependent(:destroy)
+      expect(@recipe).to have_many(:shopping_lists).dependent(:destroy)
     end
 
     it 'is expected to have many foods through recipe_foods' do
