@@ -4,7 +4,7 @@
 
   <h3><b>Recipe App</b></h3>
 
-  <img src="./app/assets/imgaes/recipe_app_ERD.png" alt="screenshot" width="auto"  height="auto" />
+  <img src="./app/assets/images/recipe_app_ERD.png" alt="screenshot" width="auto"  height="auto" />
 
 </div>
 
