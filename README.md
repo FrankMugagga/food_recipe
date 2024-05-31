@@ -93,25 +93,25 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
--[] A browser of your choice e.g Google chrome
--[] A text editor of your choice e.g. Visual Studio Code
--[] Install ruby gem and dependencies
--[] Install Postgresql
+- A browser of your choice e.g Google chrome
+- A text editor of your choice e.g. Visual Studio Code
+- Install ruby gem and dependencies
+- Install Postgresql
 
 ### Setup
 
 Clone this repository to your desired folder:
 
- -[] cd food_recipe
- -[] git clone https://github.com/FrankMugagga/food_recipe.git
+ - cd food_recipe
+ - git clone https://github.com/FrankMugagga/food_recipe.git
 
 
 ### Install
 
 Install this project with:
 
-  cd food_recipe
-  gem install
+  - cd food_recipe
+  - gem install
 
 
 ### Usage
