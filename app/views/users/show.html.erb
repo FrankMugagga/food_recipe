@@ -1,14 +1,29 @@
-<h1> <%= @user.name %>'s Public recipes </h1>
+<section>
+  <br />
+  <h1 class='head'> <%= @user.name %>'s Public recipes </h1>
 
-<% if @user_public_recipe.any? %>
-  <ul>
-    <% @user_public_recipe.each do |recipe| %>
-        <%= link_to recipe.name, recipe_path(recipe) %>
-        <%= recipe.preparation_time %>
-        <%= recipe.cooking_time %>
-        <%= recipe.description %>
-    <% end %>
-  </ul>
-<% else %>
-  <p>there are no public recipes for <%= @user.name %> </p>
-<% end %>
+  <br /><br />
+  <% if @user_public_recipe.any? %>
+    
+      <% @user_public_recipe.each do |recipe| %>
+        <ul class='user-show'>
+          <div class='user-show_'>
+            <li><b> Recipe : </b><%= link_to recipe.name, recipe_path(recipe) %> </li> 
+            <br />
+            <li> <b>Preparation time :</b> <%= recipe.preparation_time %> </li>
+          </div>
+          <div class='user-show_'>
+            <li> <b> Cooking time: </b><%= recipe.cooking_time %> </li>
+            <br />
+            <li> <b> Description: </b> <%= recipe.description %> </li>
+          </div>
+        </ul>
+      <% end %>
+    
+  <% else %>
+    <p>there are no public recipes for <%= @user.name %> </p>
+  <% end %>
+
+  <br />
+  <%= link_to 'Back', users_path %>
+</section>

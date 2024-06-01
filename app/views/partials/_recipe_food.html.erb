@@ -2,8 +2,8 @@
   <li class='recipe_food_items'><%= recipe.created_at %></li>
   <li class='recipe_food_items'> <%= recipe.food.name %> </li>
   <li class='recipe_food_items'> <%= recipe.quantity %> <%= recipe.food.measurement_unit %> </li>
-  <li class='recipe_food_items'> <%= number_with_delimiter(recipe.food.price) %> </li>
-  <li class='recipe_food_items'> <%= number_with_delimiter(recipe.food.price * recipe.quantity) %> </li>
+  <li class='recipe_food_items' id='price_align'> <%= number_with_delimiter(recipe.food.price) %> </li>
+  <li class='recipe_food_items' id='price_align'> <%= number_with_delimiter(recipe.food.price * recipe.quantity) %> </li>
   <% if can? :manage, recipe %>
     <li class='recipe_food_items'> <%= link_to 'Delete', recipe_recipe_food_path(@recipe, recipe), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %> </li>
   <% else %>

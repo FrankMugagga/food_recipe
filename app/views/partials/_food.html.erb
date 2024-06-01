@@ -1,7 +1,7 @@
 <ul class='food'>
   <li class='food_list1'> <%= food.name %> </li>
   <li class='food_list1'> <%= food.measurement_unit %> </li>
-  <li class='food_list1'> <%= food.price %> </li>
+  <li class='food_list1', id='price_align'> <%= number_with_delimiter(food.price) %> </li>
   <li>
     <div class='food_action'>
       <% if can? :manage, food %>

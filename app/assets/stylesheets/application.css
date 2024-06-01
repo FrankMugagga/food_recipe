@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Electrolize", sans-serif;
 }
 
 body {
@@ -27,7 +31,7 @@ fieldset {
   border-radius: 10px;
   width: 400px;
   border: none;
-  background-image: linear-gradient(to right, rgb(168, 203, 202), rgba(167, 209, 108, 0.857));
+  background-image: linear-gradient(to right, rgb(165, 214, 213), rgba(167, 209, 108, 0.857));
 }
 
 fieldset > legend {
@@ -65,7 +69,14 @@ section {
   padding: 5px;
   width: 70%;
   min-height: 100%;
-  background: rgba(243, 237, 237, 0.412);
+  background: rgba(225, 233, 230, 0.465);
+}
+
+#sec-align{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logout {
@@ -73,7 +84,8 @@ section {
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  background: red;
+  color: white;
+  background: rgb(50, 49, 49);
 }
 
 .menu {
@@ -88,13 +100,32 @@ section {
 }
 
 .users {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .users:nth-child(odd) {
-  background: rgb(168, 203, 202);
+  background: rgb(165, 214, 213);
   margin-top: 5px;
   padding-left: 2px;
+}
+
+.user-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  height: 80px;
+}
+
+.user-show:nth-child(odd) {
+  background: rgb(165, 214, 213);  
+}
+
+.user-show_ {
+  width: 50%;
+  padding-left: 10px;
 }
 
 .head {
@@ -125,12 +156,16 @@ section {
   height: 40px;
 }
 
+#price_align {
+  text-align: right;
+}
+
 .food:nth-last-child(odd) {
   background: rgba(167, 209, 108, 0.857);
 }
 
 .food_list:nth-child(odd) {
-  background: rgb(168, 203, 202);
+  background: rgb(165, 214, 213);
 }
 
 .food_action {
@@ -163,7 +198,7 @@ section {
 }
 
 .inv_cont:nth-child(odd) {
-  background: rgb(168, 203, 202);
+  background: rgb(165, 214, 213);
 }
 
 .inv_cont:hover {
@@ -208,8 +243,12 @@ section {
   display: flex;
 }
 
+.inv_food_head:hover {
+  border: none;
+}
+
 .inv_food_head:nth-child(odd) {
-  background: rgb(168, 203, 202);
+  background: rgb(165, 214, 213);
 }
 
 .inv_food_lis {
@@ -222,6 +261,14 @@ section {
   border: 2px solid black;
   border-radius: 5px;
   margin-bottom: 5px;
+}
+
+.recipe_cont:hover {
+  border: none;
+}
+
+.recipe_cont:nth-child(odd) {
+  background: rgb(165, 214, 213);
 }
 
 .recipe_cont > li {
@@ -314,12 +361,12 @@ section {
   display: flex;
   justify-content: center;
   padding: 5px;
-  width: 70%;
+  width: 100%;
+  border: 2px solid black;
 }
 
 .shop_ {
   width: 50%;
-  border-right: 2px solid red;
 }
 
 .shop_cont {
@@ -333,7 +380,7 @@ section {
 
 .shop_list {
   display: flex;
-  width: 70%;
+  width: 80%;
 }
 
 .shop_list_items {
@@ -346,6 +393,10 @@ section {
 @media screen and (max-width: 786px) {
   * {
     font-size: 16px;
+  }
+
+  .logout {
+    width: 96%;
   }
 
   fieldset {

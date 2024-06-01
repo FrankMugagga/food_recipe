@@ -1,28 +1,27 @@
-<fieldset>
-  <legend> <h1>Add food to inventory</h1> </legend>
+<section id= 'sec-align'>
+  <fieldset>
+    <legend> <h1>Add food to inventory</h1> </legend>
 
-  <br /><br/>
-  <%= form_with(model: @inventory_food, url: inventory_inventory_foods_path(@inventory), local: true) do |form| %>
-    <%= form.hidden_field :inventory_id, value: @inventory.id %>
-    <%= form.label :food_id, 'Select food', hidden:true %>
-    <%= form.collection_select :food_id, Food.all, :id, :name, include_blank: 'Select food' %>
+    <br /><br/>
+    <%= form_with(model: @inventory_food, url: inventory_inventory_foods_path(@inventory), local: true) do |form| %>
+      <%= form.hidden_field :inventory_id, value: @inventory.id %>
+      <%= form.label :food_id, 'Select food', hidden:true %>
+      <%= form.collection_select :food_id, Food.all, :id, :name, include_blank: 'Select food' %>
+
+      <br />
+      <br />
+      <%= form.label :quantity, hidden: true %>
+      <%= form.text_field :quantity, class: 'input', placeholder: 'Quantity', required: true %>
+
+      <br />
+      <br />
+      <div class="actions">
+        <%= form.submit 'Create', class: 'submit' %>
+      </div>
+    <% end %>
 
     <br />
-    <br />
-    <%= form.label :quantity, hidden: true %>
-    <%= form.text_field :quantity, class: 'input', placeholder: 'Quantity', required: true %>
-
-    <br />
-    <br />
-    <div class="actions">
-      <%= form.submit 'Create', class: 'submit' %>
-    </div>
-  <% end %>
-
-  <br />
-  <br>  
-  <%= link_to 'Back', inventory_path(@inventory) %>
-  
-
-
-</fieldset>
+    <br>  
+    <%= link_to 'Back', inventory_path(@inventory) %> 
+  </fieldset>
+</section>

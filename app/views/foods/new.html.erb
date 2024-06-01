@@ -1,24 +1,26 @@
-<fieldset>
-  <legend> <h2>Add food</h2> </legend>
-  <%= form_with(model: @food, url: foods_path(current_user), method: :post) do |form| %>
-    <%= form.label :name, hidden: true %>
-    <%= form.text_field :name, class: 'input', placeholder: 'Name' %>
-    <br>
-    <br>
-    <%= form.label :measurement_unit, hidden: true %>
-    <%= form.text_field :measurement_unit, class: 'input', placeholder: 'Measurement unit' %>
-    <br>
-    <br>
-    <%= form.label :price, hidden: true %>
-    <%= form.number_field :price, class: 'input', placeholder: 'Price' %>
+<section id= 'sec-align'>
+  <fieldset>
+    <legend> <h2>Add food</h2> </legend>
+    <%= form_with(model: @food, url: foods_path(current_user), method: :post) do |form| %>
+      <%= form.label :name, hidden: true %>
+      <%= form.text_field :name, class: 'input', placeholder: 'Name' %>
+      <br>
+      <br>
+      <%= form.label :measurement_unit, hidden: true %>
+      <%= form.text_field :measurement_unit, class: 'input', placeholder: 'Measurement unit' %>
+      <br>
+      <br>
+      <%= form.label :price, hidden: true %>
+      <%= form.number_field :price, class: 'input', placeholder: 'Price' %>
+
+      <br />
+      <br />
+      <div class="actions">
+        <%= form.submit 'Add food', class: 'submit' %>
+      </div>
+    <% end %>
 
     <br />
-    <br />
-    <div class="actions">
-      <%= form.submit 'Add food', class: 'submit' %>
-    </div>
-  <% end %>
-
-  <br />
-  <%= link_to 'Back', foods_path %>
+    <%= link_to 'Back', foods_path %>
+  </fieldset>
 </section>
