@@ -72,7 +72,7 @@ section {
   background: rgba(225, 233, 230, 0.465);
 }
 
-#sec-align{
+#sec-align {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +120,7 @@ section {
 }
 
 .user-show:nth-child(odd) {
-  background: rgb(165, 214, 213);  
+  background: rgb(165, 214, 213);
 }
 
 .user-show_ {
