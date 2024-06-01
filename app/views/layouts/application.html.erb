@@ -6,13 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", media: 'all' %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body> 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <br /><br />
+    <% if user_signed_in? %>
+      <div class="logout">
+        <div> Recipe App </div>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'submit' %>        
+      </div>      
+    <% end %>
 
     <%= yield %>
   </body>

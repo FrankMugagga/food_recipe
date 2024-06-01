@@ -1,12 +1,35 @@
-<h1>Shopping list </h1>
+<section>
+  <h1 class='head'>Shopping list </h1>
 
-<p>Amount of food to buy: <%= @shopping_list.total_missing_items %></p>
-<p>Total value of food needed: <%= @shopping_list.total_price %></p>
-Recipe: <%= @shopping_list.recipe.name %> <br />
-Inventory: <%= @shopping_list.inventory.name %>
+  <br /><br />
+  <div class='shoppy'>
+    <div class='shop'>
+      <div class='shop_'>
+        <div> Amount of food to buy: <%= @shopping_list.total_missing_items %> </div>
+        <div> Total value of food needed: <%= number_with_delimiter(@shopping_list.total_price) %> </div>
+      </div>
+      <div class='shop_'>
+        <div> Recipe: <%= link_to @shopping_list.recipe.name, recipe_path(@shopping_list.recipe) %>  </div>
+        <div> Inventory: <%= link_to @shopping_list.inventory.name, inventory_path(@shopping_list.inventory) %> </div>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <% @shopping_list.missing_items.each do |item| %>|
-    <li> <%= item[:food] %>: Missing <%= item[:missing] %>: Required <%= item[:required] %> price: <%= item[:price] %> </li>
-<% end %>
-</ul>
+  <br /><br />
+  <div class='shop_cont'> 
+    <ul class='shop_list'>
+      <li class='shop_list_items'> Food </li>
+      <li class='shop_list_items'> Quantity </li>
+      <li class='shop_list_items'> Unit Price </li>
+      <li class='shop_list_items'>Value</li>
+    </ul> 
+    <% @shopping_list.missing_items.each do |item| %>
+      <ul class='shop_list'>
+        <li class='shop_list_items'> <%= item[:food] %> </li>
+        <li class='shop_list_items'> <%= item[:required] %> </li> 
+        <li class='shop_list_items'> <%= number_with_delimiter(item[:price]) %> </li>
+        <li class='shop_list_items'> <%= number_with_delimiter(item[:price] * item[:required]) %> </li>
+      </ul>
+    <% end %>
+  </div>
+</section>

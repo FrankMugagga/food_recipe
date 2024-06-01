@@ -9,7 +9,7 @@ class ShoppingList < ApplicationRecord
   end
 
   def total_price
-    missing_items.sum { |item| item[:price] }
+    missing_items.sum { |item| item[:price] * item[:required] }
   end
 
   def total_missing_items

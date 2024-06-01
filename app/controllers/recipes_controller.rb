@@ -1,11 +1,13 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @recipes = Recipe.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe_foods = RecipeFood.all
+    @recipe_foods = @recipe.recipe_foods.all
   end
 
   def new

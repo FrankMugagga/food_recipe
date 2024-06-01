@@ -18,7 +18,6 @@ RSpec.describe 'Users', type: :request do
       expect(response).not_to redirect_to(new_user_session_path)
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
-      expect(response.body).to include('Welcome')
     end
   end
 end

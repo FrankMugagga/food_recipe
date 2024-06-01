@@ -1,23 +1,35 @@
+<fieldset>
 
-<h1>Create Recipe</h1>
-<%= form_with(model: @recipe, url: recipes_path(current_user), method: :post) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %><br>
+  <legend> <h1>Create Recipe</h1> </legend>
 
-  <%= form.label :preparation_time %>
-  <%= form.number_field :preparation_time %> <br>
+  <br /><br />
+  <%= form_with(model: @recipe, url: recipes_path(current_user), method: :post) do |form| %>
+    <%= form.label :name, hidden:true %>
+    <%= form.text_field :name, class: 'input', placeholder: 'Name', required: true %><br>
 
-  <%= form.label :cooking_time %>
-  <%= form.number_field :cooking_time %> <br>
+    <br />
+    <%= form.label :preparation_time, hidden:true %>
+    <%= form.number_field :preparation_time, class: 'input', placeholder: 'Preparation Time', required: true %> <br>
 
-  <%= form.label :description %>
-  <%= form.text_area :description %><br>
+    <br />
+    <%= form.label :cooking_time, hidden:true %>
+    <%= form.number_field :cooking_time, class: 'input', placeholder: 'Cooking Time', required: true %> <br>
 
-  <%= form.label :public %>
-  <%= form.check_box :public %> <br>
+    <br />
+    <%= form.label :description, hidden: true %>
+    <%= form.text_area :description, placeholder: 'Description', required: true,cols: 45, rows: 10  %><br>
+
+    <br />
+    <%= form.label :public %>
+    <%= form.check_box :public %> <br>
   
-  <%= form.submit 'Create recipe' %>  
-<% end %>
+    <br />
+    <br />
+    <div class="actions">
+      <%= form.submit 'Create recipe', class: 'submit' %> 
+    </div> 
 
-<%= link_to 'Back', recipes_path %>
+  <% end %>
 
+  <%= link_to 'Back', recipes_path %>
+</fieldset>

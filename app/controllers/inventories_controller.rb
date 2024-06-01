@@ -1,11 +1,13 @@
 class InventoriesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @inventories = Inventory.all
   end
 
   def show
     @inventory = Inventory.find(params[:id])
-    @inventory_foods = InventoryFood.all
+    @inventory_foods = @inventory.inventory_foods.all
   end
 
   def new
@@ -30,6 +32,6 @@ class InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.required(:inventory).permit(:name, :quantity, :user_id)
+    params.required(:inventory).permit(:name, :description, :user_id)
   end
 end

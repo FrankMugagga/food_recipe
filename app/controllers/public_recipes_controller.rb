@@ -1,7 +1,11 @@
 class PublicRecipesController < ApplicationController
   def index
-    @recipes = Recipe.includes(:user).where(public: true)
-    @user_food_count = current_user.foods.count
-    @user_food_total_price = current_user.foods.sum(:price)
+    @recipes = Recipe.includes(:user, :recipe_foods).where(public: true)
+
+    @recipes_data = @recipes.map do |recipe|
+      total_items = recipe.recipe_foods.count(:quantity)
+      total_price = recipe.recipe_foods.joins(:food).sum('foods.price')
+      { recipe:, total_items:, total_price: }
+    end
   end
 end
