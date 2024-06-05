@@ -1,4 +1,5 @@
 <%= user.name %> 's 
 <%= link_to 'Public recipes', user %>
 <%= user.email %>
+<%= link_to 'Delete', user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 
