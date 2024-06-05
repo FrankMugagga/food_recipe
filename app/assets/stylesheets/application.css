@@ -108,7 +108,7 @@ section {
 .users:nth-child(odd) {
   background: rgb(165, 214, 213);
   margin-top: 5px;
-  padding-left: 2px;
+  padding-left: 5px;
 }
 
 .user-show {
