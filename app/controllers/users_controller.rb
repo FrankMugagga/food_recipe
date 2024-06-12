@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     @user_public_recipe = @user.recipes.where(public: true)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_url, notice: 'user was successfully destroyed'
+  end
+
   private
 
   def user_params
