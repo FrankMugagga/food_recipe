@@ -33,6 +33,6 @@ Rails.application.routes.draw do
     resources :recipe_foods
   end
 
-  resources :users, only: [:index, :show, :destroy]
+  resources :users, only: [:index, :show]
   resources :public_recipes, only: [:index]
 end
