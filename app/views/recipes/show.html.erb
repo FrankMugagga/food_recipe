@@ -5,10 +5,13 @@
   <br />
   <div class='recipe_show'>
     preparation time: <%= @recipe.preparation_time %>
-    <% if @recipe.public %>
-      <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
-    <% else %>
-      <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
+    <% if can? :manage, recipe %>
+      <% if @recipe.public %>
+        <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
+
+      <% else %>
+        <div class='public'> <%= button_to 'Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'button' %> : <%= @recipe.public %> </div>
+      <% end %>
     <% end %>
   </div>
 
