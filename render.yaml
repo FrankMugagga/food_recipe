@@ -1,0 +1,19 @@
+databases:
+  - name: my_database
+    databaseName: my_database_uw75
+    user: my_database_uw75_user
+
+services:
+  - type: web
+    name: food_recipe
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: my_database
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
