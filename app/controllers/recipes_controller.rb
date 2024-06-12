@@ -45,8 +45,11 @@ class RecipesController < ApplicationController
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
-    @recipe.update(public: !@recipe.public)
-    redirect_back(fallback_location: recipe_path(@recipe))
+    if @recipe.update(public: !@recipe.public)
+       redirect_back(fallback_location: recipe_path)
+    else
+      flash[:alert] = "Unable to update recipe visibility."
+    end
 
   end
 
