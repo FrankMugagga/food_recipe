@@ -17,7 +17,7 @@
     <br /><br />
     <% if user_signed_in? %>
       <div class="logout">
-        <div> Recipe App </div>
+        <div> <%= image_tag '/assets/images/recipe.jpeg' alt: 'recipe_app_image' class: 'image' % > Recipe App </div>
         <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'submit' %>        
       </div>      
     <% end %>

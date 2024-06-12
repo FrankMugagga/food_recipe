@@ -65,6 +65,11 @@ fieldset > legend {
   border: 2px groove;
 }
 
+.image {
+  width: 100px;
+  height: 100px;
+}
+
 section {
   padding: 5px;
   width: 70%;
