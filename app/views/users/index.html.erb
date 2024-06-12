@@ -3,11 +3,11 @@
     <% current_time = Time.now %>
     <br />
     <% if current_time.hour >= 0 && current_time.hour < 12 %>
-      <h1 class='head'>Good morning <em> <%= current_user.name %> </em>, you are welcome  </h1>
+      <h1 class='head'>Good morning <em> <%= current_user.name %> </em>, you are welcome!  </h1>
     <% elsif current_time.hour >= 12 && current_time.hour < 18 %>
-      <h1 class='head'>Good afternoon <%= current_user.name %>, you are welcome  </h1>
+      <h1 class='head'>Good afternoon <%= current_user.name %>, you are welcome!  </h1>
     <% else %>
-      <h1 class='head'> Good evening <%= current_user.name %>, you are welcome  </h1>
+      <h1 class='head'> Good evening <%= current_user.name %>, you are welcome!  </h1>
     <% end %>
 
     <br />

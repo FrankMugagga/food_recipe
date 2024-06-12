@@ -65,6 +65,11 @@ fieldset > legend {
   border: 2px groove;
 }
 
+.image {
+  width: 100px;
+  height: 100px;
+}
+
 section {
   padding: 5px;
   width: 70%;
@@ -108,7 +113,7 @@ section {
 .users:nth-child(odd) {
   background: rgb(165, 214, 213);
   margin-top: 5px;
-  padding-left: 2px;
+  padding-left: 5px;
 }
 
 .user-show {
