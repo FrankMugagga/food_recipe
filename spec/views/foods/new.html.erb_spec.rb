@@ -6,7 +6,7 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
 
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    
+
     sign_in @user
     visit new_food_path
   end

@@ -6,7 +6,7 @@ RSpec.describe 'inventories/show,.html.erb', type: :view do
 
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    
+
     sign_in @user
     @inventory = @user.inventories.create(name: 'inventory one', user_id: @user.id, description: 'This inventory ....')
     visit inventory_path(@inventory)
