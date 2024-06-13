@@ -1,9 +1,11 @@
 <section>
-  <h1 class='head'>Inventory: <%= @inventory.name %> <%= @inventory.id %> </h1>  
+  <h1 class='head'>Inventory Name: <%= @inventory.name %> <%= @inventory.id %> </h1>  
 
   <br />
   <div class='button_container'>
-    <%= link_to 'Add Food Quantity', new_inventory_inventory_food_path(@inventory), class:'button' %>
+    <% if can? :manage, @inventory %>
+      <%= link_to 'Add Food Quantity', new_inventory_inventory_food_path(@inventory), class:'button' %>
+    <% end %>
   </div>
   <hr>
 

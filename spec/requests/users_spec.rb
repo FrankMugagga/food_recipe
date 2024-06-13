@@ -11,8 +11,7 @@ RSpec.describe 'Users', type: :request do
 
     it "renders the user's index page when a user signs in" do
       @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-      @user.confirm
-      expect(@user.confirmed?).to be true
+
       sign_in @user
       get '/users'
       expect(response).not_to redirect_to(new_user_session_path)

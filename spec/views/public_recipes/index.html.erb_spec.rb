@@ -6,8 +6,7 @@ RSpec.describe 'public_recipes/index.html.erb', type: :view do
 
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    @user.confirm
-    expect(@user.confirmed?).to be true
+
     sign_in @user
     visit public_recipes_path
   end

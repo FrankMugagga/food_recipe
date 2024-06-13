@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    @user.confirm
   end
 
   describe 'The user validity' do

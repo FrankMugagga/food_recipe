@@ -6,8 +6,7 @@ RSpec.describe 'inventories/new,.html.erb', type: :view do
 
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    @user.confirm
-    expect(@user.confirmed?).to be true
+
     sign_in @user
     visit new_inventory_path
   end

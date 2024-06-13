@@ -1,14 +1,12 @@
 databases:
   - name: my_database
-    databaseName: my_database_x2rf
-    user: my_database_x2rf_user
-    plan: free
+    databaseName: my_database_uw75
+    user: my_database_uw75_user
 
 services:
   - type: web
     name: food_recipe
-    runtime: ruby
-    plan: free
+    env: ruby
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec puma -C config/puma.rb"
@@ -19,5 +17,3 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: WEB_CONCURRENCY
-        value: 2 # sensible default

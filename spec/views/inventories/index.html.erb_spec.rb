@@ -6,8 +6,7 @@ RSpec.describe 'inventories/index,.html.erb', type: :view do
 
   before do
     @user = User.create(name: 'zed', email: 'zed@g.com', password: 'As@1234567', password_confirmation: 'As@1234567')
-    @user.confirm
-    expect(@user.confirmed?).to be true
+
     sign_in @user
     @inventory = @user.inventories.create(name: 'inventory one', user_id: @user.id, description: 'This inventory ....')
     @inventory1 = @user.inventories.create(name: 'inventory two', user_id: @user.id,
