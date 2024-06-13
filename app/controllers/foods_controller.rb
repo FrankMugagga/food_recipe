@@ -10,12 +10,11 @@ class FoodsController < ApplicationController
   end
 
   def new
-    @food = Food.new
+    @food = current_user.foods.new
   end
 
   def create
-    @user = current_user
-    @food = @user.foods.new(food_params)
+    @food = current_user.foods.new(food_params)
 
     if @food.save
       redirect_to foods_path, notice: 'Food was successfully created'
