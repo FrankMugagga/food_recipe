@@ -60,7 +60,7 @@ fieldset > legend {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.submit:hover {  
+.submit:hover {
   border-radius: 10px;
   box-shadow: 0 6px 7px rgb(151, 120, 120);
 }
@@ -92,7 +92,7 @@ section {
 
 .logout:hover {
   padding-left: 5px;
-  background: linear-gradient(to right, rgba(151, 120, 120, 0.7), rgba(149, 194, 149, 0.7));  
+  background: linear-gradient(to right, rgba(151, 120, 120, 0.7), rgba(149, 194, 149, 0.7));
 }
 
 .image {
@@ -122,19 +122,15 @@ section {
 }
 
 .users:nth-child(odd) {
-  background: linear-gradient(to right, rgba(149, 194, 149, 0.80), rgb(151, 120, 120, 0.2));
+  background: linear-gradient(to right, rgba(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
   margin-top: 5px;
   padding-left: 10px;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 50px;
 }
 
-.users:nth-child(odd):hover {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgba(149, 194, 149, 0.80));
-}
-
-.users:nth-child(even){
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));
+.users:nth-child(even) {
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
   margin-top: 5px;
   padding-left: 10px;
   border-top-right-radius: 50px;
@@ -142,7 +138,11 @@ section {
 }
 
 .users:nth-child(even):hover {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
+}
+
+.users:nth-child(odd):hover {
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgba(149, 194, 149, 0.8));
 }
 
 .user-show {
@@ -154,11 +154,11 @@ section {
 }
 
 .user-show:nth-child(odd) {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
 }
 
 .user-show:nth-child(even) {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
 }
 
 .user-show_ {
@@ -231,32 +231,32 @@ section {
 .inv_cont {
   margin-bottom: 5px;
   height: 100px;
-  border: 2px solid rgb(151, 120, 120, 0.20);
-}
-
-.inv_cont:nth-child(odd) {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 50px;
-}
-
-.inv_cont:nth-child(odd):hover {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));
+  border: 2px solid rgb(151, 120, 120, 0.2);
 }
 
 .inv_cont:nth-child(even) {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
   border-bottom-left-radius: 20px;
   border-top-right-radius: 50px;
 }
 
-.inv_cont:nth-child(even):hover {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));  
+.inv_cont:nth-child(odd) {
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 50px;
 }
 
 .inv_cont:hover {
   box-shadow: 0 2px 5px;
   border: none;
+}
+
+.inv_cont:nth-child(even):hover {
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
+}
+
+.inv_cont:nth-child(odd):hover {
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
 }
 
 .inv {
@@ -283,7 +283,7 @@ section {
 }
 
 .inv_food_cont {
-  border: 2px solid rgb(151, 120, 120, 0.20);
+  border: 2px solid rgb(151, 120, 120, 0.2);
   border-radius: 5px;
 }
 
@@ -301,39 +301,38 @@ section {
 }
 
 .inv_food_head:nth-child(odd) {
-  background: rgb(149, 194, 149, 0.80);
+  background: rgb(149, 194, 149, 0.8);
 }
 
 .inv_food_lis {
-  border-left: 2px solid rgb(151, 120, 120, 0.40);
+  border-left: 2px solid rgb(151, 120, 120, 0.4);
   width: 33%;
   padding: 5px;
 }
 
 .recipe_cont {
-  border: 2px solid rgb(149, 194, 149, 0.80);
+  border: 2px solid rgb(149, 194, 149, 0.8);
   margin-top: 5px;
 }
 
+.recipe_cont:nth-child(even) {
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 20px;
+}
 
 .recipe_cont:nth-child(odd) {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));  
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
   border-bottom-right-radius: 50px;
   border-top-left-radius: 20px;
 }
 
 .recipe_cont:nth-child(odd):hover {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));  
-}
-
-.recipe_cont:nth-child(even) {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));  
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 20px;
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
 }
 
 .recipe_cont:nth-child(even):hover {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));    
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
 }
 
 .recipe_cont > li {
@@ -376,7 +375,7 @@ section {
 }
 
 .recipe_f {
-  border: 2px solid  rgb(149, 194, 149, 0.80);
+  border: 2px solid  rgb(149, 194, 149, 0.8);
 }
 
 .recipe_food_cont {
@@ -386,39 +385,39 @@ section {
 }
 
 .recipe_food_cont:nth-child(odd) {
-  background: rgb(151, 120, 120, 0.20);    
+  background: rgb(151, 120, 120, 0.2);
 }
 
 .recipe_food_items {
   width: 25%;
   padding: 5px;
-  border-right: 2px solid rgb(149, 194, 149, 0.80);
+  border-right: 2px solid rgb(149, 194, 149, 0.8);
 }
 
 .public_cont {
   display: flex;
   align-items: center;
   padding: 5px;
-  border: 2px solid rgb(149, 194, 149, 0.80);
+  border: 2px solid rgb(149, 194, 149, 0.8);
   margin-bottom: 10px;
 }
 
 .public_cont:nth-child(odd) {
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));    
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
 }
 
 .public_cont:nth-child(even) {
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));    
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
 }
 
 .public_cont_left {
   width: 50%;
-  background: linear-gradient(to right, rgb(149, 194, 149, 0.80), rgb(151, 120, 120, 0.20));    
+  background: linear-gradient(to right, rgb(149, 194, 149, 0.8), rgb(151, 120, 120, 0.2));
 }
 
 .public_cont_right {
   width: 40%;
-  background: linear-gradient(to right, rgb(151, 120, 120, 0.20), rgb(149, 194, 149, 0.80));      
+  background: linear-gradient(to right, rgb(151, 120, 120, 0.2), rgb(149, 194, 149, 0.8));
 }
 
 .shoppy {
